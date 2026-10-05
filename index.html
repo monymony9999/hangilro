@@ -7,16 +7,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-<title>한길로</title>
+<title>한길로 – 친구와 같이 짜는 여행 시간표 플래너</title>
+<link rel="canonical" href="https://monymony9999.github.io/hangilro/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://monymony9999.github.io/hangilro/">
+<meta property="og:site_name" content="한길로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://monymony9999.github.io/hangilro/icon-512.png">
+<meta name="twitter:card" content="summary">
+<meta name="keywords" content="여행 계획, 여행 일정 짜기, 여행 시간표, 일정 공유, 같이 여행 계획, 여행 플래너, 한길로">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"한길로","alternateName":"Hangilro","url":"https://monymony9999.github.io/hangilro/","applicationCategory":"TravelApplication","operatingSystem":"Web","inLanguage":"ko","description":"단톡방 대신 한길로. 시간 블록으로 하루를 짜고, 친구와 실시간으로 함께 수정하고, 완성하면 AI가 여행 포스터를 만들어 줘요. 무료 여행 일정 계획 앱.","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="한길로">
 <script src="firebase-config.js"></script>
-<meta name="description" content="하루를 한 줄로. 시간 블록으로 여행 계획을 짜는 가장 단순한 플래너.">
-<meta property="og:title" content="한길로">
-<meta property="og:description" content="하루를 한 줄로. 시간 블록으로 여행 계획을 짜는 가장 단순한 플래너.">
+<meta name="description" content="단톡방 대신 한길로. 시간 블록으로 하루를 짜고, 친구와 실시간으로 함께 수정하고, 완성하면 AI가 여행 포스터를 만들어 줘요. 무료 여행 일정 계획 앱.">
+<meta property="og:title" content="한길로 – 친구와 같이 짜는 여행 시간표 플래너">
+<meta property="og:description" content="단톡방 대신 한길로. 시간 블록으로 하루를 짜고, 친구와 실시간으로 함께 수정하고, 완성하면 AI가 여행 포스터를 만들어 줘요. 무료 여행 일정 계획 앱.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23DB6430'/><rect x='14' y='15' width='12' height='9' rx='4.5' fill='white'/><rect x='30' y='15' width='20' height='9' rx='4.5' fill='white' fill-opacity='.55'/><rect x='14' y='28' width='12' height='14' rx='5' fill='white'/><rect x='30' y='28' width='20' height='14' rx='5' fill='white' fill-opacity='.55'/><rect x='14' y='46' width='12' height='4' rx='2' fill='white'/><rect x='30' y='46' width='20' height='4' rx='2' fill='white' fill-opacity='.55'/></svg>">
 <script>try{var d=document.documentElement,p=localStorage.getItem('hangilro:palette'),m=localStorage.getItem('hangilro:mode');if(p==='apricot'||p==='mist'||p==='sage')d.setAttribute('data-palette',p);if(m==='light'||m==='dark')d.setAttribute('data-theme',m);}catch(e){}</script>
 <style>
@@ -1503,6 +1513,9 @@
 </style>
 </head>
 <body data-view="plan">
+<h1 class="sr">한길로 – 친구와 같이 짜는 여행 시간표 플래너</h1>
+<p class="sr">여행 하루를 시간 블록으로 짜고, 블록 길이를 끌어서 조절하고, 친구와 실시간으로 함께 수정하는 무료 여행 일정 계획 웹앱입니다. 계획을 완성하면 AI가 일정 내용을 읽고 어울리는 테마와 분위기를 만들어 여행 포스터처럼 보여 줍니다. 구글 계정으로 로그인해 내 계획들을 저장하고 코드로 친구를 초대할 수 있습니다.</p>
+
 <div id="app">
   <div id="views">
     <section id="v-plan" class="view on" aria-label="계획">
