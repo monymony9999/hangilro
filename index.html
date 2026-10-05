@@ -23,7 +23,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="한길로">
-<script src="firebase-config.js"></script>
+<script src="firebase-config.js?v=4"></script>
 <meta name="description" content="단톡방 대신 한길로. 시간 블록으로 하루를 짜고, 친구와 실시간으로 함께 수정하고, 완성하면 AI가 여행 포스터를 만들어 줘요. 무료 여행 일정 계획 앱.">
 <meta property="og:title" content="한길로 – 친구와 같이 짜는 여행 시간표 플래너">
 <meta property="og:description" content="단톡방 대신 한길로. 시간 블록으로 하루를 짜고, 친구와 실시간으로 함께 수정하고, 완성하면 AI가 여행 포스터를 만들어 줘요. 무료 여행 일정 계획 앱.">
@@ -1506,6 +1506,67 @@
   .gbtn svg { width: 20px; height: 20px; flex: none; }
   .gbtn:active { transform: scale(.985); }
 
+  /* =========================================================
+     Completed page v3: kit art, user title, calm typography
+     ========================================================= */
+  #done-pane.dz-host { background: linear-gradient(180deg, var(--t-bg1), var(--t-bg2)); padding-bottom: 56px; }
+  #done-pane .dz-hero {
+    position: relative; isolation: isolate; overflow: hidden;
+    height: 490px; padding: 0;
+    border-radius: 30px;
+    color: var(--t-hero-ink);
+    background: var(--t-bg2);
+    background-image: none;
+    box-shadow: 0 26px 46px -28px rgba(0, 0, 0, .4);
+  }
+  #done-pane .dz-art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+  #done-pane .dz-hero::after { z-index: 1; opacity: .12; mix-blend-mode: overlay; }
+  #done-pane .dz-htxt { position: relative; z-index: 2; padding: 78px 26px 0; }
+  #done-pane .dz-title {
+    margin: 0;
+    font-family: var(--t-font); font-weight: var(--t-tw, 700);
+    line-height: 1.1; letter-spacing: -0.035em;
+    word-break: keep-all; text-wrap: balance;
+    text-shadow: none;
+  }
+  #done-pane .dz-sub { margin: 14px 0 0; max-width: 16em; font-size: 15px; line-height: 1.55; opacity: .86; word-break: keep-all; text-wrap: balance; }
+  #done-pane .dz-tools { z-index: 3; }
+
+  #done-pane .dz-day { margin-top: 42px; }
+  #done-pane .dz-daybar { display: flex; align-items: flex-end; gap: 16px; margin: 0 2px 16px; }
+  #done-pane .dz-dnum { color: var(--t-day); }
+  #done-pane .dz-rule { flex: 1; height: 1px; margin-bottom: 11px; background: color-mix(in srgb, var(--t-page-ink) 18%, transparent); }
+
+  #done-pane .dz-list::before { background: var(--t-line); width: 2px; }
+  #done-pane .dz-dot { background: var(--t-acc); box-shadow: 0 0 0 4px var(--t-bg1); }
+  #done-pane .dz-time { color: var(--t-page-ink); }
+  #done-pane .dz-time small { color: var(--t-page-sub); }
+
+  #done-pane .dz-card { color: var(--t-ink); background: var(--t-card); border: 0; padding: 16px 16px 14px 18px; }
+  #done-pane .dz-card h3 {
+    margin: 0; font-family: var(--t-font); font-weight: var(--t-tw, 700);
+    font-size: 18px; line-height: 1.4; letter-spacing: -0.02em; word-break: keep-all;
+  }
+  #done-pane.k-soft .dz-card { border-radius: 22px; box-shadow: 0 1px 0 rgba(0, 0, 0, .03), 0 16px 30px -22px color-mix(in srgb, var(--t-acc) 55%, transparent); }
+  #done-pane.k-pill .dz-card { border-radius: 30px; padding: 18px 20px 16px 22px; box-shadow: 0 16px 30px -22px color-mix(in srgb, var(--t-acc) 50%, transparent); }
+  #done-pane.k-sharp .dz-card { border-radius: 4px; border: 1px solid color-mix(in srgb, var(--t-ink) 18%, transparent); box-shadow: none; }
+  #done-pane.k-sharp .dz-dot { border-radius: 2px; transform: rotate(45deg); }
+  #done-pane.k-bar .dz-card { border-radius: 12px; border-left: 4px solid var(--t-acc); box-shadow: 0 12px 26px -18px rgba(0, 0, 0, .55); }
+
+  #done-pane .dz-photo { margin-top: 12px; }
+  #done-pane .dz-add { height: 46px; border: 0; border-radius: 14px; background: color-mix(in srgb, var(--t-acc) 10%, transparent); color: var(--t-acc); }
+  #done-pane .dz-add:active { background: color-mix(in srgb, var(--t-acc) 18%, transparent); }
+
+  #done-pane .dz-end {
+    margin: 46px 18px 6px; text-align: center;
+    font-family: var(--t-font); font-weight: var(--t-tw, 700); font-size: 19px; line-height: 1.55;
+    color: var(--t-page-ink); word-break: keep-all; text-wrap: balance;
+  }
+  #done-pane .dz-end::before { content: ""; display: block; width: 34px; height: 2px; margin: 0 auto 20px; border-radius: 1px; background: var(--t-acc); }
+
+  .title-input { height: 56px; margin-top: 4px; font-size: 20px; letter-spacing: -0.02em; text-transform: none; text-align: left; padding: 0 18px; font-family: var(--font); }
+  .title-input::placeholder { letter-spacing: 0; opacity: .45; }
+
   .page.fresh .scroll { animation: rise .8s var(--ease) both; }
   @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
@@ -1612,6 +1673,7 @@
     <div class="warn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17.2v.1"/></svg></div>
     <h2 id="ctitle">계획을 완성할까요?</h2>
     <p id="cdesc" class="warn-text"><b>완성된 계획은 수정할 수 없어요.</b></p>
+    <input id="c-title" class="code-input title-input" type="text" maxlength="24" autocomplete="off" placeholder="여행 제목" aria-label="여행 제목">
     <div class="btns">
       <button id="ccancel" type="button">취소</button>
       <button id="cok" type="button">완성하기</button>
@@ -2879,34 +2941,687 @@
     });
   }
 
-  /* theme: colors, fonts, patterns */
-  function hexOk(h) { return typeof h === 'string' && /^#[0-9a-fA-F]{6}$/.test(h); }
-  function lum(h) {
-    var c = [1, 3, 5].map(function (i) {
-      var v = parseInt(h.slice(i, i + 2), 16) / 255;
-      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-    });
+  /* ---------- theme kits: hand-built art direction (palette, type, scene) ---------- */
+  function hashStr(s) { var h = 2166136261; s = String(s); for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+  function rng(seed) {
+    var a = seed >>> 0;
+    return function () {
+      a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function n1(n) { return Math.round(n * 10) / 10; }
+  var TAU = 6.2832;
+  function gradDef(id, stops, vertical) {
+    return '<linearGradient id="' + id + '" x1="0" y1="0" x2="' + (vertical === false ? 1 : 0) + '" y2="' + (vertical === false ? 0 : 1) + '">' +
+      stops.map(function (c, i) { return '<stop offset="' + n1(i / (stops.length - 1) * 100) + '%" stop-color="' + c + '"/>'; }).join('') + '</linearGradient>';
+  }
+  function skyRect(id, cols) { return '<defs>' + gradDef(id + 's', cols) + '</defs><rect y="-90" width="390" height="550" fill="url(#' + id + 's)"/>'; }
+  function glow(id, x, y, r, c, o) {
+    return '<defs><radialGradient id="' + id + '"><stop offset="0" stop-color="' + c + '" stop-opacity="' + o + '"/><stop offset="1" stop-color="' + c + '" stop-opacity="0"/></radialGradient></defs>' +
+      '<circle cx="' + n1(x) + '" cy="' + n1(y) + '" r="' + n1(r) + '" fill="url(#' + id + ')"/>';
+  }
+  function wave(base, amp, wl, ph) {
+    var d = 'M0 460 L0 ' + n1(base + amp * Math.sin(ph));
+    for (var x = 0; x <= 396; x += 6) d += ' L' + x + ' ' + n1(base + amp * Math.sin(x / wl * TAU + ph) + amp * 0.35 * Math.sin(x / (wl * 0.43) * TAU + ph * 1.7));
+    return d + ' L390 460 Z';
+  }
+  function ridge(base, amp, R, sharp) {
+    var p1 = R() * TAU, p2 = R() * TAU, p3 = R() * TAU, a = 1.2 + R() * 1.1, b = 3.1 + R() * 1.6, c = 7 + R() * 3;
+    var d = 'M0 460';
+    for (var x = 0; x <= 396; x += 5) {
+      var t = x / 390;
+      var v = (sharp ? 0.55 : 0.4) * Math.abs(Math.sin(t * a * 3.14159 + p1)) + 0.32 * Math.sin(t * b * 3.14159 + p2) + 0.13 * Math.sin(t * c * 3.14159 + p3);
+      d += ' L' + x + ' ' + n1(base - amp * v);
+    }
+    return d + ' L390 460 Z';
+  }
+  function pine(x, y, h, c, snow) {
+    var w = h * 0.36, o = 'M' + n1(x) + ' ' + n1(y - h) +
+      ' L' + n1(x + w * 0.52) + ' ' + n1(y - h * 0.62) + ' L' + n1(x + w * 0.26) + ' ' + n1(y - h * 0.62) +
+      ' L' + n1(x + w * 0.78) + ' ' + n1(y - h * 0.3) + ' L' + n1(x + w * 0.38) + ' ' + n1(y - h * 0.3) +
+      ' L' + n1(x + w) + ' ' + n1(y) + ' L' + n1(x - w) + ' ' + n1(y) +
+      ' L' + n1(x - w * 0.38) + ' ' + n1(y - h * 0.3) + ' L' + n1(x - w * 0.78) + ' ' + n1(y - h * 0.3) +
+      ' L' + n1(x - w * 0.26) + ' ' + n1(y - h * 0.62) + ' L' + n1(x - w * 0.52) + ' ' + n1(y - h * 0.62) + ' Z';
+    var s = '<path d="' + o + '" fill="' + c + '"/>';
+    if (snow) s += '<path d="M' + n1(x) + ' ' + n1(y - h) + ' L' + n1(x + w * 0.3) + ' ' + n1(y - h * 0.74) + ' Q' + n1(x) + ' ' + n1(y - h * 0.8) + ' ' + n1(x - w * 0.3) + ' ' + n1(y - h * 0.74) + ' Z" fill="' + snow + '"/>';
+    return s;
+  }
+  function stars(R, n, c, maxY) {
+    var s = '';
+    for (var i = 0; i < n; i++) {
+      var r = 0.5 + R() * 1.3;
+      s += '<circle cx="' + n1(R() * 390) + '" cy="' + n1(R() * maxY) + '" r="' + n1(r) + '" fill="' + c + '" fill-opacity="' + n1(0.35 + R() * 0.6) + '"/>';
+    }
+    return s;
+  }
+  function stars2(R, n, c, y0, y1) {
+    var s = '';
+    for (var i = 0; i < n; i++) s += '<circle cx="' + n1(R() * 390) + '" cy="' + n1(y0 + R() * (y1 - y0)) + '" r="' + n1(0.5 + R() * 1.3) + '" fill="' + c + '" fill-opacity="' + n1(0.35 + R() * 0.6) + '"/>';
+    return s;
+  }
+  function spark(x, y, r, c, o) {
+    return '<path d="M' + n1(x) + ' ' + n1(y - r) + ' Q' + n1(x + r * 0.12) + ' ' + n1(y - r * 0.12) + ' ' + n1(x + r) + ' ' + n1(y) +
+      ' Q' + n1(x + r * 0.12) + ' ' + n1(y + r * 0.12) + ' ' + n1(x) + ' ' + n1(y + r) +
+      ' Q' + n1(x - r * 0.12) + ' ' + n1(y + r * 0.12) + ' ' + n1(x - r) + ' ' + n1(y) +
+      ' Q' + n1(x - r * 0.12) + ' ' + n1(y - r * 0.12) + ' ' + n1(x) + ' ' + n1(y - r) + 'Z" fill="' + c + '" fill-opacity="' + (o || 0.9) + '"/>';
+  }
+  function birds(R, n, c, y0, y1) {
+    var s = '';
+    for (var i = 0; i < n; i++) {
+      var x = 40 + R() * 310, y = y0 + R() * (y1 - y0), w = 6 + R() * 6;
+      s += '<path d="M' + n1(x - w) + ' ' + n1(y) + ' Q' + n1(x - w * 0.4) + ' ' + n1(y - w * 0.7) + ' ' + n1(x) + ' ' + n1(y) + ' Q' + n1(x + w * 0.4) + ' ' + n1(y - w * 0.7) + ' ' + n1(x + w) + ' ' + n1(y) + '" fill="none" stroke="' + c + '" stroke-width="1.6" stroke-linecap="round"/>';
+    }
+    return s;
+  }
+  function flower(x, y, r, c1, c2, rot) {
+    var s = '<g transform="translate(' + n1(x) + ' ' + n1(y) + ') rotate(' + n1(rot) + ')">';
+    for (var i = 0; i < 5; i++) {
+      var a = i * TAU / 5;
+      s += '<circle cx="' + n1(Math.cos(a) * r * 0.58) + '" cy="' + n1(Math.sin(a) * r * 0.58) + '" r="' + n1(r * 0.52) + '" fill="' + c1 + '"/>';
+    }
+    return s + '<circle r="' + n1(r * 0.2) + '" fill="' + c2 + '"/></g>';
+  }
+  var MAPLE = 'M0 -9 L2.4 -3.6 L8.4 -5 L4.6 0 L8 5.4 L1.8 4.4 L0 9.5 L-1.8 4.4 L-8 5.4 L-4.6 0 L-8.4 -5 L-2.4 -3.6 Z';
+  var GINKGO = 'M0 9 C-1 4 -2 3 -8 0 C-10 -6 -4 -10 0 -6 C4 -10 10 -6 8 0 C2 3 1 4 0 9 Z';
+  function leaf(x, y, s, rot, c, shape) {
+    return '<path d="' + shape + '" transform="translate(' + n1(x) + ' ' + n1(y) + ') rotate(' + n1(rot) + ') scale(' + n1(s) + ')" fill="' + c + '"/>';
+  }
+  function roundTree(x, y, h, trunk, c) {
+    return '<rect x="' + n1(x - 1.6) + '" y="' + n1(y - h * 0.4) + '" width="3.2" height="' + n1(h * 0.4) + '" fill="' + trunk + '"/>' +
+      '<ellipse cx="' + n1(x) + '" cy="' + n1(y - h * 0.62) + '" rx="' + n1(h * 0.3) + '" ry="' + n1(h * 0.4) + '" fill="' + c + '"/>';
+  }
+  function building(x, w, top, c, win, R, litP, wc) {
+    var s = '<rect x="' + n1(x) + '" y="' + n1(top) + '" width="' + n1(w) + '" height="' + n1(470 - top) + '" fill="' + c + '"/>';
+    if (win) {
+      var cols = Math.max(1, Math.floor((w - 6) / 7)), rows = Math.floor((410 - top) / 11);
+      for (var r = 0; r < rows; r++) for (var q = 0; q < cols; q++) {
+        if (R() < litP) s += '<rect x="' + n1(x + 4 + q * 7) + '" y="' + n1(top + 8 + r * 11) + '" width="3.4" height="5" fill="' + win + '" fill-opacity="' + n1(wc * (0.55 + R() * 0.45)) + '"/>';
+      }
+    }
+    return s;
+  }
+  function skyline(base, c, win, R, minH, maxH, litP, wc, tower) {
+    var s = '', x = -10;
+    while (x < 400) {
+      var w = 22 + R() * 30, h = minH + R() * (maxH - minH);
+      s += building(x, w, base - h, c, win, R, litP, wc);
+      if (R() < 0.18) s += '<rect x="' + n1(x + w / 2 - 1) + '" y="' + n1(base - h - 16) + '" width="2" height="16" fill="' + c + '"/>';
+      x += w + (R() < 0.3 ? 4 : 0);
+    }
+    if (tower) {
+      var tx = tower, tb = base - maxH - 8;
+      s += '<path d="M' + (tx - 9) + ' 470 L' + (tx - 3) + ' ' + (tb + 24) + ' L' + (tx - 1.4) + ' ' + (tb - 40) + ' L' + tx + ' ' + (tb - 74) + ' L' + (tx + 1.4) + ' ' + (tb - 40) + ' L' + (tx + 3) + ' ' + (tb + 24) + ' L' + (tx + 9) + ' 470 Z" fill="' + c + '"/>' +
+        '<ellipse cx="' + tx + '" cy="' + (tb + 6) + '" rx="12" ry="5" fill="' + c + '"/>';
+    }
+    return s;
+  }
+  function palm(x, y, h, lean, c1, c2, R) {
+    var tx = x + lean, ty = y - h;
+    var s = '<path d="M' + n1(x) + ' ' + n1(y) + ' Q' + n1(x + lean * 0.2) + ' ' + n1(y - h * 0.55) + ' ' + n1(tx) + ' ' + n1(ty) + '" fill="none" stroke="' + c1 + '" stroke-width="6.5" stroke-linecap="round"/>';
+    var angs = [-168, -140, -112, -84, -56, -28, -4];
+    for (var i = 0; i < angs.length; i++) {
+      var a = angs[i] + (R() - 0.5) * 12, L = 62 + R() * 22;
+      s += '<path d="M0 0 Q' + n1(L * 0.5) + ' ' + n1(-L * 0.42) + ' ' + n1(L) + ' ' + n1(L * 0.12) + ' Q' + n1(L * 0.52) + ' ' + n1(-L * 0.16) + ' 0 0 Z" transform="translate(' + n1(tx) + ' ' + n1(ty) + ') rotate(' + n1(a) + ')" fill="' + (i % 2 ? c1 : c2) + '"/>';
+    }
+    return s + '<circle cx="' + n1(tx) + '" cy="' + n1(ty + 3) + '" r="4" fill="' + c1 + '"/>';
+  }
+  function hanokRoof(cx, y, s, c, pillar, R) {
+    var k = s || 1, X = function (v) { return n1(cx + v * k); }, Y = function (v) { return n1(y + v * k); };
+    var o = '<rect x="' + X(-92) + '" y="' + Y(44) + '" width="184" height="10" fill="' + c + '"/>';
+    for (var i = -3; i <= 3; i++) o += '<rect x="' + X(i * 26 - 3) + '" y="' + Y(44) + '" width="' + n1(6 * k) + '" height="' + n1(110 * k) + '" fill="' + pillar + '"/>';
+    o += '<rect x="' + X(-100) + '" y="' + Y(154) + '" width="200" height="10" fill="' + c + '"/>';
+    o += '<path d="M' + X(-176) + ' ' + Y(34) + ' C' + X(-150) + ' ' + Y(44) + ' ' + X(-118) + ' ' + Y(40) + ' ' + X(-98) + ' ' + Y(24) +
+      ' L' + X(-66) + ' ' + Y(-20) + ' C' + X(-30) + ' ' + Y(-30) + ' ' + X(30) + ' ' + Y(-30) + ' ' + X(66) + ' ' + Y(-20) +
+      ' L' + X(98) + ' ' + Y(24) + ' C' + X(118) + ' ' + Y(40) + ' ' + X(150) + ' ' + Y(44) + ' ' + X(176) + ' ' + Y(34) +
+      ' C' + X(150) + ' ' + Y(60) + ' ' + X(110) + ' ' + Y(54) + ' ' + X(90) + ' ' + Y(50) +
+      ' L' + X(-90) + ' ' + Y(50) + ' C' + X(-110) + ' ' + Y(54) + ' ' + X(-150) + ' ' + Y(60) + ' ' + X(-176) + ' ' + Y(34) + ' Z" fill="' + c + '"/>';
+    for (var j = -4; j <= 4; j++) o += '<path d="M' + X(j * 14) + ' ' + Y(-22 + Math.abs(j) * 6) + ' L' + X(j * 21) + ' ' + Y(46) + '" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.2"/>';
+    return o;
+  }
+  function arch(x, y, w, h, c) {
+    var r = w / 2;
+    return '<path d="M' + n1(x) + ' 470 L' + n1(x) + ' ' + n1(y + r) + ' A' + n1(r) + ' ' + n1(r) + ' 0 0 1 ' + n1(x + w) + ' ' + n1(y + r) + ' L' + n1(x + w) + ' 470 Z" fill="' + c + '"/>';
+  }
+
+  /* ---------- bespoke layer: tint, motifs, and safe free-form props ---------- */
+  var HEXRE = /^#[0-9a-fA-F]{6}$/;
+  function hexRgb(h) { return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)]; }
+  function rgbHex(r, g, b) { function c(x) { x = Math.max(0, Math.min(255, Math.round(x))); return (x < 16 ? '0' : '') + x.toString(16); } return '#' + c(r) + c(g) + c(b); }
+  function lumHex(h) {
+    var c = hexRgb(h).map(function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
     return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
   }
-  function contrast(a, b) { var x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
-  function fixPalette(pl) {
-    var lightCard = lum(pl.card) > 0.4, lightBg = lum(pl.bg1) > 0.4;
-    if (contrast(pl.ink, pl.card) < 4.5) pl.ink = lightCard ? '#1D1D1F' : '#F5F5F7';
-    if (contrast(pl.sub, pl.card) < 3) pl.sub = lightCard ? '#6E6E73' : '#A1A1A6';
-    pl.pageInk = contrast(pl.ink, pl.bg1) >= 4.5 ? pl.ink : (lightBg ? '#1D1D1F' : '#F5F5F7');
-    pl.pageSub = contrast(pl.sub, pl.bg1) >= 3 ? pl.sub : (lightBg ? '#6E6E73' : '#A1A1A6');
-    pl.day = contrast(pl.acc2, pl.bg1) >= 3 ? pl.acc2 : pl.pageInk;
-    pl.heroInk = (contrast('#FFFFFF', pl.acc2) >= 3 && contrast('#FFFFFF', pl.acc) >= 2) ? '#FFFFFF' : '#1D1D1F';
-    return pl;
+  function contrastHex(a, b) { var x = lumHex(a), y = lumHex(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
+  function shiftHex(h, hue, sat, lit) {
+    var c = hexRgb(h), r = c[0] / 255, g = c[1] / 255, b = c[2] / 255;
+    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, s = 0, hh = 0, d = mx - mn;
+    if (d) {
+      s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+      hh = mx === r ? ((g - b) / d + (g < b ? 6 : 0)) : mx === g ? ((b - r) / d + 2) : ((r - g) / d + 4);
+      hh *= 60;
+    }
+    hh = (hh + hue + 360) % 360; s = Math.max(0, Math.min(1, s * sat)); l = Math.max(0.02, Math.min(0.98, l + lit));
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
+    function f(t) { t = (t + 360) % 360 / 360; if (t < 1 / 6) return p + (q - p) * 6 * t; if (t < 1 / 2) return q; if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6; return p; }
+    return rgbHex(f(hh + 120) * 255, f(hh) * 255, f(hh - 120) * 255);
   }
-  var FONTS = {
-    serif: ['Gowun Batang', 'Gowun+Batang:wght@400;700'],
-    rounded: ['Jua', 'Jua'],
-    hand: ['Gaegu', 'Gaegu:wght@400;700'],
-    elegant: ['Nanum Myeongjo', 'Nanum+Myeongjo:wght@400;700;800'],
-    sans: ['Noto Sans KR', 'Noto+Sans+KR:wght@500;700']
+  var TEXT_KEYS = { ink: 1, cink: 1, hink: 1, sub: 1, csub: 1 };
+  function tintVariant(v, hue, sat, lit) {
+    hue = +hue || 0; sat = +sat || 1; lit = +lit || 0;
+    if (!hue && sat === 1 && !lit) return v;
+    function map(x, key) {
+      if (typeof x === 'string') return HEXRE.test(x) ? shiftHex(x, hue, sat, TEXT_KEYS[key] ? 0 : lit) : x;
+      if (Array.isArray(x)) return x.map(function (y) { return map(y, key); });
+      return x;
+    }
+    var o = {};
+    Object.keys(v).forEach(function (k) { o[k] = map(v[k], k); });
+    if (contrastHex(o.ink, o.bg1) < 4.5 || contrastHex(o.cink, o.card) < 4.5) return v;
+    return o;
+  }
+  function kitVariant(t) {
+    var K = KITS[t.kit] || KITS.classic;
+    return tintVariant(K.variants[(t.variant | 0) % K.variants.length], t.hue, t.sat, t.lit);
+  }
+  function colorRoles(v) {
+    var darks = [v.ink, v.cink, v.hink, v.bg2], dark = darks[0], dl = 9, lights = [v.card, v.ink, v.cink, v.hink], light = lights[0], ll = -1;
+    darks.forEach(function (c) { var l = lumHex(c); if (l < dl) { dl = l; dark = c; } });
+    lights.forEach(function (c) { var l = lumHex(c); if (l > ll) { ll = l; light = c; } });
+    return { sil: dark, lit: light, acc: v.acc, sun: v.sun || v.moon || v.acc };
+  }
+
+  /* motifs: flat, palette-coloured silhouettes drawn on the same canvas as the scene */
+  function P(x) { return n1(x); }
+  var MOTIFS = {
+    bridge: { slot: 'far', y: 330, s: 0.95, wide: 1, fn: function (x, y, s, C) {
+      var o = '<rect x="' + P(x - 200 * s) + '" y="' + P(y) + '" width="' + P(400 * s) + '" height="' + P(5 * s) + '" fill="' + C.sil + '"/>';
+      [-84, 84].forEach(function (dx) {
+        var tx = x + dx * s, h = 100 * s;
+        o += '<path d="M' + P(tx - 5 * s) + ' ' + P(y + 10 * s) + ' L' + P(tx - 2.2 * s) + ' ' + P(y - h) + ' L' + P(tx + 2.2 * s) + ' ' + P(y - h) + ' L' + P(tx + 5 * s) + ' ' + P(y + 10 * s) + ' Z" fill="' + C.sil + '"/>';
+        o += '<rect x="' + P(tx - 3 * s) + '" y="' + P(y + 5 * s) + '" width="' + P(6 * s) + '" height="' + P(60 * s) + '" fill="' + C.sil + '"/>';
+        for (var i = 1; i <= 7; i++) {
+          o += '<line x1="' + P(tx) + '" y1="' + P(y - h + 8 * s) + '" x2="' + P(tx - i * 22 * s) + '" y2="' + P(y) + '" stroke="' + C.sil + '" stroke-width="' + P(1.1 * s) + '" stroke-opacity=".75"/>';
+          o += '<line x1="' + P(tx) + '" y1="' + P(y - h + 8 * s) + '" x2="' + P(tx + i * 22 * s) + '" y2="' + P(y) + '" stroke="' + C.sil + '" stroke-width="' + P(1.1 * s) + '" stroke-opacity=".75"/>';
+        }
+      });
+      for (var k = -9; k <= 9; k++) o += '<circle cx="' + P(x + k * 20 * s) + '" cy="' + P(y + 2.5 * s) + '" r="' + P(1.5 * s) + '" fill="' + C.sun + '"/>';
+      return o;
+    } },
+    lighthouse: { slot: 'far', y: 332, s: 1, fn: function (x, y, s, C) {
+      return '<path d="M' + P(x + 6 * s) + ' ' + P(y - 82 * s) + ' L' + P(x + 130 * s) + ' ' + P(y - 112 * s) + ' L' + P(x + 130 * s) + ' ' + P(y - 54 * s) + ' Z" fill="' + C.sun + '" fill-opacity=".28"/>' +
+        '<path d="M' + P(x - 12 * s) + ' ' + P(y) + ' L' + P(x - 7.5 * s) + ' ' + P(y - 72 * s) + ' L' + P(x + 7.5 * s) + ' ' + P(y - 72 * s) + ' L' + P(x + 12 * s) + ' ' + P(y) + ' Z" fill="' + C.lit + '"/>' +
+        '<path d="M' + P(x - 10.4 * s) + ' ' + P(y - 24 * s) + ' L' + P(x - 9.2 * s) + ' ' + P(y - 40 * s) + ' L' + P(x + 9.2 * s) + ' ' + P(y - 40 * s) + ' L' + P(x + 10.4 * s) + ' ' + P(y - 24 * s) + ' Z M' + P(x - 8.6 * s) + ' ' + P(y - 52 * s) + ' L' + P(x - 7.8 * s) + ' ' + P(y - 64 * s) + ' L' + P(x + 7.8 * s) + ' ' + P(y - 64 * s) + ' L' + P(x + 8.6 * s) + ' ' + P(y - 52 * s) + ' Z" fill="' + C.acc + '"/>' +
+        '<rect x="' + P(x - 11 * s) + '" y="' + P(y - 76 * s) + '" width="' + P(22 * s) + '" height="' + P(4.5 * s) + '" fill="' + C.sil + '"/>' +
+        '<rect x="' + P(x - 6 * s) + '" y="' + P(y - 92 * s) + '" width="' + P(12 * s) + '" height="' + P(16 * s) + '" fill="' + C.sun + '"/>' +
+        '<path d="M' + P(x - 10 * s) + ' ' + P(y - 92 * s) + ' L' + P(x) + ' ' + P(y - 108 * s) + ' L' + P(x + 10 * s) + ' ' + P(y - 92 * s) + ' Z" fill="' + C.sil + '"/>' +
+        '<ellipse cx="' + P(x) + '" cy="' + P(y + 2 * s) + '" rx="' + P(34 * s) + '" ry="' + P(7 * s) + '" fill="' + C.sil + '"/>';
+    } },
+    sailboat: { slot: 'far', y: 306, s: 1.15, fn: function (x, y, s, C) {
+      return '<path d="M' + P(x - 24 * s) + ' ' + P(y) + ' L' + P(x + 24 * s) + ' ' + P(y) + ' L' + P(x + 16 * s) + ' ' + P(y + 9 * s) + ' L' + P(x - 16 * s) + ' ' + P(y + 9 * s) + ' Z" fill="' + C.sil + '"/>' +
+        '<rect x="' + P(x - 1) + '" y="' + P(y - 56 * s) + '" width="2" height="' + P(56 * s) + '" fill="' + C.sil + '"/>' +
+        '<path d="M' + P(x + 2.5 * s) + ' ' + P(y - 4 * s) + ' L' + P(x + 2.5 * s) + ' ' + P(y - 54 * s) + ' L' + P(x + 26 * s) + ' ' + P(y - 4 * s) + ' Z" fill="' + C.lit + '"/>' +
+        '<path d="M' + P(x - 3 * s) + ' ' + P(y - 4 * s) + ' L' + P(x - 3 * s) + ' ' + P(y - 42 * s) + ' L' + P(x - 20 * s) + ' ' + P(y - 4 * s) + ' Z" fill="' + C.lit + '" fill-opacity=".88"/>' +
+        '<path d="M' + P(x) + ' ' + P(y - 56 * s) + ' L' + P(x + 11 * s) + ' ' + P(y - 53 * s) + ' L' + P(x) + ' ' + P(y - 50 * s) + ' Z" fill="' + C.acc + '"/>';
+    } },
+    ferris: { slot: 'far', y: 334, s: 1, fn: function (x, y, s, C) {
+      var cx = x, cy = y - 62 * s, R = 52 * s, o = '';
+      o += '<path d="M' + P(cx) + ' ' + P(cy) + ' L' + P(x - 30 * s) + ' ' + P(y) + ' M' + P(cx) + ' ' + P(cy) + ' L' + P(x + 30 * s) + ' ' + P(y) + '" stroke="' + C.sil + '" stroke-width="' + P(3 * s) + '" stroke-linecap="round" fill="none"/>';
+      o += '<circle cx="' + P(cx) + '" cy="' + P(cy) + '" r="' + P(R) + '" fill="none" stroke="' + C.sil + '" stroke-width="' + P(2.6 * s) + '"/><circle cx="' + P(cx) + '" cy="' + P(cy) + '" r="' + P(R * 0.62) + '" fill="none" stroke="' + C.sil + '" stroke-width="' + P(1.2 * s) + '" stroke-opacity=".7"/>';
+      for (var i = 0; i < 10; i++) {
+        var a = i * TAU / 10;
+        o += '<line x1="' + P(cx) + '" y1="' + P(cy) + '" x2="' + P(cx + Math.cos(a) * R) + '" y2="' + P(cy + Math.sin(a) * R) + '" stroke="' + C.sil + '" stroke-width="' + P(1.1 * s) + '" stroke-opacity=".8"/>';
+        o += '<circle cx="' + P(cx + Math.cos(a) * R) + '" cy="' + P(cy + Math.sin(a) * R + 4 * s) + '" r="' + P(4.6 * s) + '" fill="' + (i % 2 ? C.acc : C.sun) + '"/>';
+      }
+      return o + '<circle cx="' + P(cx) + '" cy="' + P(cy) + '" r="' + P(4 * s) + '" fill="' + C.sil + '"/><rect x="' + P(x - 38 * s) + '" y="' + P(y - 2 * s) + '" width="' + P(76 * s) + '" height="' + P(5 * s) + '" rx="' + P(2.5 * s) + '" fill="' + C.sil + '"/>';
+    } },
+    tower: { slot: 'far', y: 336, s: 1, fn: function (x, y, s, C) {
+      return '<ellipse cx="' + P(x) + '" cy="' + P(y + 6 * s) + '" rx="' + P(70 * s) + '" ry="' + P(16 * s) + '" fill="' + C.sil + '" fill-opacity=".9"/>' +
+        '<path d="M' + P(x - 8 * s) + ' ' + P(y) + ' L' + P(x - 2.4 * s) + ' ' + P(y - 108 * s) + ' L' + P(x + 2.4 * s) + ' ' + P(y - 108 * s) + ' L' + P(x + 8 * s) + ' ' + P(y) + ' Z" fill="' + C.sil + '"/>' +
+        '<path d="M' + P(x - 15 * s) + ' ' + P(y - 108 * s) + ' L' + P(x + 15 * s) + ' ' + P(y - 108 * s) + ' L' + P(x + 11 * s) + ' ' + P(y - 122 * s) + ' L' + P(x - 11 * s) + ' ' + P(y - 122 * s) + ' Z" fill="' + C.sil + '"/>' +
+        '<rect x="' + P(x - 11 * s) + '" y="' + P(y - 118 * s) + '" width="' + P(22 * s) + '" height="' + P(3 * s) + '" fill="' + C.sun + '"/>' +
+        '<rect x="' + P(x - 1) + '" y="' + P(y - 158 * s) + '" width="2" height="' + P(36 * s) + '" fill="' + C.sil + '"/>';
+    } },
+    pagoda: { slot: 'far', y: 334, s: 1, fn: function (x, y, s, C) {
+      var o = '', w = 46 * s, ty = y;
+      for (var t = 0; t < 4; t++) {
+        var ww = w - t * 7 * s, hh = 18 * s;
+        o += '<rect x="' + P(x - ww * 0.62) + '" y="' + P(ty - hh) + '" width="' + P(ww * 1.24) + '" height="' + P(hh) + '" fill="' + C.acc + '"/>';
+        o += '<path d="M' + P(x - ww * 1.25) + ' ' + P(ty - hh + 1) + ' Q' + P(x - ww * 0.8) + ' ' + P(ty - hh - 2) + ' ' + P(x - ww * 0.55) + ' ' + P(ty - hh - 12 * s) + ' L' + P(x + ww * 0.55) + ' ' + P(ty - hh - 12 * s) + ' Q' + P(x + ww * 0.8) + ' ' + P(ty - hh - 2) + ' ' + P(x + ww * 1.25) + ' ' + P(ty - hh + 1) + ' Z" fill="' + C.sil + '"/>';
+        ty -= hh + 12 * s;
+      }
+      return o + '<rect x="' + P(x - 1) + '" y="' + P(ty - 22 * s) + '" width="2" height="' + P(22 * s) + '" fill="' + C.sil + '"/><circle cx="' + P(x) + '" cy="' + P(ty - 18 * s) + '" r="' + P(3 * s) + '" fill="' + C.sun + '"/>' +
+        '<rect x="' + P(x - w * 0.9) + '" y="' + P(y) + '" width="' + P(w * 1.8) + '" height="' + P(7 * s) + '" fill="' + C.sil + '"/>';
+    } },
+    castle: { slot: 'far', y: 336, s: 1, fn: function (x, y, s, C) {
+      function tower(cx, w, h, roof) {
+        return '<rect x="' + P(cx - w / 2) + '" y="' + P(y - h) + '" width="' + P(w) + '" height="' + P(h) + '" fill="' + C.lit + '"/>' +
+          '<path d="M' + P(cx - w / 2 - 3 * s) + ' ' + P(y - h) + ' L' + P(cx) + ' ' + P(y - h - roof) + ' L' + P(cx + w / 2 + 3 * s) + ' ' + P(y - h) + ' Z" fill="' + C.acc + '"/>' +
+          '<rect x="' + P(cx - 1.4 * s) + '" y="' + P(y - h - roof - 12 * s) + '" width="' + P(2.8 * s) + '" height="' + P(12 * s) + '" fill="' + C.sil + '"/>' +
+          '<path d="M' + P(cx + 1.4 * s) + ' ' + P(y - h - roof - 12 * s) + ' L' + P(cx + 12 * s) + ' ' + P(y - h - roof - 8 * s) + ' L' + P(cx + 1.4 * s) + ' ' + P(y - h - roof - 4 * s) + ' Z" fill="' + C.sun + '"/>' +
+          '<path d="M' + P(cx - 3 * s) + ' ' + P(y - h * 0.6) + ' a3 3 0 0 1 ' + P(6 * s) + ' 0 v' + P(10 * s) + ' h' + P(-6 * s) + ' Z" fill="' + C.sil + '" fill-opacity=".55"/>';
+      }
+      return '<rect x="' + P(x - 44 * s) + '" y="' + P(y - 44 * s) + '" width="' + P(88 * s) + '" height="' + P(44 * s) + '" fill="' + C.lit + '"/>' +
+        '<path d="M' + P(x - 12 * s) + ' ' + P(y) + ' v' + P(-22 * s) + ' a' + P(12 * s) + ' ' + P(12 * s) + ' 0 0 1 ' + P(24 * s) + ' 0 v' + P(22 * s) + ' Z" fill="' + C.sil + '" fill-opacity=".7"/>' +
+        tower(x - 50 * s, 22 * s, 66 * s, 26 * s) + tower(x + 50 * s, 22 * s, 66 * s, 26 * s) + tower(x, 28 * s, 92 * s, 32 * s);
+    } },
+    torii: { slot: 'near', y: 444, s: 1.25, fn: function (x, y, s, C) {
+      return '<rect x="' + P(x - 34 * s) + '" y="' + P(y - 74 * s) + '" width="' + P(8 * s) + '" height="' + P(74 * s) + '" fill="' + C.acc + '"/><rect x="' + P(x + 26 * s) + '" y="' + P(y - 74 * s) + '" width="' + P(8 * s) + '" height="' + P(74 * s) + '" fill="' + C.acc + '"/>' +
+        '<rect x="' + P(x - 30 * s) + '" y="' + P(y - 56 * s) + '" width="' + P(60 * s) + '" height="' + P(6 * s) + '" fill="' + C.acc + '"/>' +
+        '<path d="M' + P(x - 52 * s) + ' ' + P(y - 80 * s) + ' Q' + P(x) + ' ' + P(y - 70 * s) + ' ' + P(x + 52 * s) + ' ' + P(y - 80 * s) + ' L' + P(x + 46 * s) + ' ' + P(y - 68 * s) + ' Q' + P(x) + ' ' + P(y - 60 * s) + ' ' + P(x - 46 * s) + ' ' + P(y - 68 * s) + ' Z" fill="' + C.sil + '"/>' +
+        '<rect x="' + P(x - 37 * s) + '" y="' + P(y - 4 * s) + '" width="' + P(14 * s) + '" height="' + P(4 * s) + '" fill="' + C.sil + '"/><rect x="' + P(x + 23 * s) + '" y="' + P(y - 4 * s) + '" width="' + P(14 * s) + '" height="' + P(4 * s) + '" fill="' + C.sil + '"/>';
+    } },
+    train: { slot: 'near', y: 440, s: 1, wide: 1, fn: function (x, y, s, C) {
+      var o = '<rect x="-10" y="' + P(y + 1) + '" width="410" height="3" fill="' + C.sil + '" fill-opacity=".55"/>', bx = x - 186 * s;
+      for (var c = 0; c < 2; c++) {
+        var cx0 = bx + c * 152 * s;
+        o += '<rect x="' + P(cx0) + '" y="' + P(y - 38 * s) + '" width="' + P(146 * s) + '" height="' + P(34 * s) + '" rx="' + P(8 * s) + '" fill="' + C.lit + '"/>';
+        o += '<rect x="' + P(cx0) + '" y="' + P(y - 16 * s) + '" width="' + P(146 * s) + '" height="' + P(6 * s) + '" fill="' + C.acc + '"/>';
+        for (var w = 0; w < 6; w++) o += '<rect x="' + P(cx0 + 10 * s + w * 22 * s) + '" y="' + P(y - 31 * s) + '" width="' + P(14 * s) + '" height="' + P(11 * s) + '" rx="' + P(2 * s) + '" fill="' + C.sil + '" fill-opacity=".72"/>';
+        o += '<circle cx="' + P(cx0 + 24 * s) + '" cy="' + P(y - 3 * s) + '" r="' + P(5 * s) + '" fill="' + C.sil + '"/><circle cx="' + P(cx0 + 122 * s) + '" cy="' + P(y - 3 * s) + '" r="' + P(5 * s) + '" fill="' + C.sil + '"/>';
+      }
+      var nx = bx + 304 * s;
+      return o + '<path d="M' + P(nx) + ' ' + P(y - 38 * s) + ' L' + P(nx + 40 * s) + ' ' + P(y - 38 * s) + ' Q' + P(nx + 62 * s) + ' ' + P(y - 24 * s) + ' ' + P(nx + 66 * s) + ' ' + P(y - 4 * s) + ' L' + P(nx) + ' ' + P(y - 4 * s) + ' Z" fill="' + C.lit + '"/>' +
+        '<path d="M' + P(nx + 8 * s) + ' ' + P(y - 31 * s) + ' L' + P(nx + 38 * s) + ' ' + P(y - 31 * s) + ' Q' + P(nx + 52 * s) + ' ' + P(y - 24 * s) + ' ' + P(nx + 55 * s) + ' ' + P(y - 18 * s) + ' L' + P(nx + 8 * s) + ' ' + P(y - 18 * s) + ' Z" fill="' + C.sil + '" fill-opacity=".72"/>';
+    } },
+    tent: { slot: 'near', y: 442, s: 1, fn: function (x, y, s, C) {
+      return '<path d="M' + P(x - 60 * s) + ' ' + P(y) + ' L' + P(x) + ' ' + P(y - 64 * s) + ' L' + P(x + 60 * s) + ' ' + P(y) + ' Z" fill="' + C.acc + '"/><path d="M' + P(x - 14 * s) + ' ' + P(y) + ' L' + P(x) + ' ' + P(y - 34 * s) + ' L' + P(x + 14 * s) + ' ' + P(y) + ' Z" fill="' + C.sun + '"/>' +
+        '<path d="M' + P(x) + ' ' + P(y - 64 * s) + ' L' + P(x) + ' ' + P(y) + '" stroke="' + C.sil + '" stroke-opacity=".3" stroke-width="1.4"/><rect x="' + P(x - 1) + '" y="' + P(y - 82 * s) + '" width="2" height="' + P(20 * s) + '" fill="' + C.sil + '"/><path d="M' + P(x + 1) + ' ' + P(y - 82 * s) + ' L' + P(x + 14 * s) + ' ' + P(y - 77 * s) + ' L' + P(x + 1) + ' ' + P(y - 72 * s) + ' Z" fill="' + C.sun + '"/>';
+    } },
+    cake: { slot: 'near', y: 442, s: 1.05, fn: function (x, y, s, C) {
+      var o = '<ellipse cx="' + P(x) + '" cy="' + P(y) + '" rx="' + P(58 * s) + '" ry="' + P(7 * s) + '" fill="' + C.sil + '" fill-opacity=".35"/>';
+      o += '<rect x="' + P(x - 44 * s) + '" y="' + P(y - 28 * s) + '" width="' + P(88 * s) + '" height="' + P(28 * s) + '" rx="' + P(5 * s) + '" fill="' + C.lit + '"/>';
+      o += '<rect x="' + P(x - 30 * s) + '" y="' + P(y - 54 * s) + '" width="' + P(60 * s) + '" height="' + P(26 * s) + '" rx="' + P(5 * s) + '" fill="' + C.acc + '"/>';
+      o += '<path d="M' + P(x - 30 * s) + ' ' + P(y - 54 * s) + ' q' + P(7.5 * s) + ' ' + P(10 * s) + ' ' + P(15 * s) + ' 0 q' + P(7.5 * s) + ' ' + P(10 * s) + ' ' + P(15 * s) + ' 0 q' + P(7.5 * s) + ' ' + P(10 * s) + ' ' + P(15 * s) + ' 0 q' + P(7.5 * s) + ' ' + P(10 * s) + ' ' + P(15 * s) + ' 0 Z" fill="' + C.lit + '"/>';
+      for (var i = -1; i <= 1; i++) o += '<rect x="' + P(x + i * 16 * s - 1.6 * s) + '" y="' + P(y - 72 * s) + '" width="' + P(3.2 * s) + '" height="' + P(18 * s) + '" fill="' + C.sil + '" fill-opacity=".75"/><path d="M' + P(x + i * 16 * s) + ' ' + P(y - 86 * s) + ' q' + P(5 * s) + ' ' + P(8 * s) + ' 0 ' + P(13 * s) + ' q' + P(-5 * s) + ' ' + P(-5 * s) + ' 0 ' + P(-13 * s) + ' Z" fill="' + C.sun + '"/>';
+      for (var j = 0; j < 5; j++) o += '<circle cx="' + P(x - 34 * s + j * 17 * s) + '" cy="' + P(y - 14 * s) + '" r="' + P(2.6 * s) + '" fill="' + C.acc + '"/>';
+      return o;
+    } },
+    balloons: { slot: 'sky', y: 226, s: 1, fn: function (x, y, s, C) {
+      var cols = [C.acc, C.sun, C.lit], o = '';
+      [[-26, 6, 0], [0, -14, 1], [26, 8, 2]].forEach(function (b, i) {
+        var bx = x + b[0] * s, by = y + b[1] * s;
+        o += '<path d="M' + P(bx) + ' ' + P(by + 22 * s) + ' Q' + P(x + b[0] * 0.3 * s) + ' ' + P(y + 62 * s) + ' ' + P(x) + ' ' + P(y + 78 * s) + '" fill="none" stroke="' + C.sil + '" stroke-opacity=".5" stroke-width="1.2"/>';
+        o += '<ellipse cx="' + P(bx) + '" cy="' + P(by) + '" rx="' + P(16 * s) + '" ry="' + P(20 * s) + '" fill="' + cols[b[2]] + '"/><path d="M' + P(bx - 3 * s) + ' ' + P(by + 20 * s) + ' L' + P(bx + 3 * s) + ' ' + P(by + 20 * s) + ' L' + P(bx) + ' ' + P(by + 25 * s) + ' Z" fill="' + cols[b[2]] + '"/><ellipse cx="' + P(bx - 5 * s) + '" cy="' + P(by - 7 * s) + '" rx="' + P(3.4 * s) + '" ry="' + P(6 * s) + '" fill="#fff" fill-opacity=".4"/>';
+      });
+      return o;
+    } },
+    hearts: { slot: 'sky', y: 230, s: 1, fn: function (x, y, s, C) {
+      var o = '', H = 'M0 6 C-10 -4 -10 -14 0 -9 C10 -14 10 -4 0 6 Z';
+      [[-34, 10, 1.1, 0], [-8, -16, 1.7, 1], [24, 4, 1.3, 2], [46, -22, 0.8, 0], [4, 36, 0.8, 1]].forEach(function (h) {
+        o += '<path d="' + H + '" transform="translate(' + P(x + h[0] * s) + ' ' + P(y + h[1] * s) + ') scale(' + P(h[2] * s * 1.6) + ')" fill="' + [C.acc, C.sun, C.lit][h[3]] + '" fill-opacity=".92"/>';
+      });
+      return o;
+    } },
+    plane: { slot: 'sky', y: 236, s: 1, fn: function (x, y, s, C) {
+      return '<path d="M' + P(x - 150 * s) + ' ' + P(y + 40 * s) + ' Q' + P(x - 80 * s) + ' ' + P(y + 34 * s) + ' ' + P(x - 30 * s) + ' ' + P(y + 8 * s) + '" fill="none" stroke="' + C.lit + '" stroke-opacity=".75" stroke-width="' + P(3 * s) + '" stroke-linecap="round" stroke-dasharray="' + P(10 * s) + ' ' + P(7 * s) + '"/>' +
+        '<g transform="translate(' + P(x) + ' ' + P(y) + ') rotate(-16) scale(' + P(s) + ')"><path d="M-30 0 Q-30 -5 -20 -5 L26 -5 Q40 -3 44 0 Q40 3 26 5 L-20 5 Q-30 5 -30 0 Z" fill="' + C.lit + '"/><path d="M-4 -4 L-18 -26 L-8 -26 L12 -4 Z M-4 4 L-18 26 L-8 26 L12 4 Z" fill="' + C.lit + '" fill-opacity=".92"/><path d="M-26 -4 L-34 -14 L-28 -14 L-18 -4 Z" fill="' + C.acc + '"/><rect x="14" y="-2.4" width="22" height="2.6" rx="1.3" fill="' + C.sil + '" fill-opacity=".5"/></g>';
+    } },
+    cloud: { slot: 'sky', y: 216, s: 1, fn: function (x, y, s, C) {
+      return '<g fill="' + C.lit + '" fill-opacity=".9"><circle cx="' + P(x - 26 * s) + '" cy="' + P(y) + '" r="' + P(16 * s) + '"/><circle cx="' + P(x) + '" cy="' + P(y - 10 * s) + '" r="' + P(22 * s) + '"/><circle cx="' + P(x + 28 * s) + '" cy="' + P(y - 1 * s) + '" r="' + P(17 * s) + '"/><rect x="' + P(x - 42 * s) + '" y="' + P(y - 2 * s) + '" width="' + P(88 * s) + '" height="' + P(16 * s) + '" rx="' + P(8 * s) + '"/></g>';
+    } }
   };
-  var PATTERNS = ['waves', 'dots', 'stars', 'petals', 'grid', 'none'];
+  var MOTIF_NAMES = Object.keys(MOTIFS);
+  var ZONES = { left: 92, center: 195, right: 298 };
+
+  /* free-form props drawn by AI: strictly whitelisted shapes, palette tokens only */
+  var PROP_TAGS = { g: 1, path: 1, circle: 1, ellipse: 1, rect: 1, line: 1, polyline: 1, polygon: 1 };
+  var PROP_NUM = { cx: 1, cy: 1, r: 1, rx: 1, ry: 1, x: 1, y: 1, x1: 1, y1: 1, x2: 1, y2: 1, width: 1, height: 1, 'stroke-width': 1 };
+  var PROP_OP = { opacity: 1, 'fill-opacity': 1, 'stroke-opacity': 1 };
+  function cleanProp(str, C) {
+    if (typeof str !== 'string' || str.length > 1400) return null;
+    var doc;
+    try { doc = new DOMParser().parseFromString('<svg xmlns="http://www.w3.org/2000/svg">' + str + '</svg>', 'image/svg+xml'); } catch (e) { return null; }
+    if (!doc || doc.getElementsByTagName('parsererror').length) return null;
+    var count = 0, ok = true;
+    function colorOf(v) { v = String(v).trim(); if (v === 'none') return 'none'; return C[v] || null; }
+    function walk(node) {
+      var out = '';
+      Array.prototype.forEach.call(node.childNodes, function (ch) {
+        if (!ok || ch.nodeType !== 1) return;
+        var tag = ch.localName;
+        if (!PROP_TAGS[tag] || ++count > 60) { ok = false; return; }
+        var attrs = '';
+        Array.prototype.forEach.call(ch.attributes, function (a) {
+          var n = a.name, v = a.value;
+          if (n === 'd') { if (/^[MmLlHhVvCcSsQqTtAaZz0-9eE.,\s-]+$/.test(v) && v.length <= 800) attrs += ' d="' + v + '"'; else ok = false; }
+          else if (n === 'points') { if (/^[0-9eE.,\s-]+$/.test(v) && v.length <= 400) attrs += ' points="' + v + '"'; else ok = false; }
+          else if (PROP_NUM[n]) { var f = parseFloat(v); if (isFinite(f) && Math.abs(f) <= 1000) attrs += ' ' + n + '="' + f + '"'; else ok = false; }
+          else if (PROP_OP[n]) { var q = parseFloat(v); if (isFinite(q)) attrs += ' ' + n + '="' + Math.max(0, Math.min(1, q)) + '"'; }
+          else if (n === 'fill' || n === 'stroke') { var c = colorOf(v); if (c) attrs += ' ' + n + '="' + c + '"'; else ok = false; }
+          else if (n === 'stroke-linecap' || n === 'stroke-linejoin') { if (/^(round|butt|square|miter|bevel)$/.test(v)) attrs += ' ' + n + '="' + v + '"'; }
+          else if (n === 'transform') { if (/^(\s*(translate|rotate|scale)\\([-0-9.,\s]+\\)\s*)+$/.test(v)) attrs += ' transform="' + v + '"'; else ok = false; }
+          else if (n === 'fill-rule') { if (/^(evenodd|nonzero)$/.test(v)) attrs += ' fill-rule="' + v + '"'; }
+        });
+        out += '<' + tag + attrs + (tag === 'g' ? '>' + walk(ch) + '</g>' : '/>');
+      });
+      return out;
+    }
+    var res = walk(doc.documentElement);
+    return (ok && count > 0 && res) ? res : null;
+  }
+  function buildSlots(t, v, R) {
+    var S = { sky: '', far: '', near: '' };
+    if (t.kit === 'cafe') return S;
+    var C = colorRoles(v), noFar = t.kit === 'classic';
+    (t.motifs || []).slice(0, 3).forEach(function (m) {
+      var d = MOTIFS[m && m.name]; if (!d || (noFar && d.slot === 'far')) return;
+      var x = d.wide ? 195 : (ZONES[m.zone] || 195);
+      S[d.slot] += '<g>' + d.fn(x, d.y, d.s, C, R) + '</g>';
+    });
+    (t.props || []).slice(0, 2).forEach(function (pr) {
+      var inner = pr && cleanProp(pr.svg, C); if (!inner) return;
+      var slot = pr.slot === 'sky' || pr.slot === 'near' ? pr.slot : 'far';
+      if (noFar && slot === 'far') return;
+      var sc = pr.size === 'large' ? 2.1 : pr.size === 'small' ? 1 : 1.5, base = slot === 'near' ? 444 : slot === 'sky' ? 300 : 334;
+      var x = ZONES[pr.zone] || 195;
+      S[slot] += '<g transform="translate(' + P(x - 50 * sc) + ' ' + P(base - 100 * sc) + ') scale(' + sc + ')">' + inner + '</g>';
+    });
+    return S;
+  }
+
+  /* ---- scenes: (palette, rng, uid, slots) -> svg inner markup on a 390 x 460 canvas ---- */
+  var SCENES = {
+    sea: function (c, R, id, S) {
+      var sx = 80 + R() * 230, sy = c.sunY || 214, sr = 40 + R() * 10, o = skyRect(id, c.sky);
+      o += glow(id + 'g', sx, sy, sr * 3, c.sun, 0.55) + '<circle cx="' + n1(sx) + '" cy="' + n1(sy) + '" r="' + n1(sr) + '" fill="' + c.sun + '"/>';
+      o += birds(R, 3, c.bird, -34, 6) + S.sky;
+      var bx = sx < 200 ? 250 + R() * 90 : 40 + R() * 90;
+      o += '<path d="M' + n1(bx) + ' 252 L' + n1(bx) + ' 232 L' + n1(bx + 12) + ' 252 Z M' + n1(bx - 2) + ' 252 L' + n1(bx - 2) + ' 238 L' + n1(bx - 11) + ' 252 Z" fill="' + c.bird + '" fill-opacity=".55"/>';
+      for (var i = 0; i < c.l.length; i++) {
+        o += '<path d="' + wave(262 + i * 36, 2.6 + i * 3.4, 150 - i * 13, R() * TAU) + '" fill="' + c.l[i] + '"/>';
+        if (i === 1) o += S.far;
+        if (i === 0) for (var k = 0; k < 4; k++) o += '<rect x="' + n1(sx - 38 + k * 6) + '" y="' + (270 + k * 11) + '" width="' + (76 - k * 12) + '" height="3.2" rx="1.6" fill="' + c.sun + '" fill-opacity="' + n1(0.5 - k * 0.09) + '"/>';
+      }
+      return o + S.near;
+    },
+    mountain: function (c, R, id, S) {
+      var sx = 70 + R() * 250, o = skyRect(id, c.sky);
+      o += glow(id + 'g', sx, c.sunY || 170, 130, c.sun, 0.6) + '<circle cx="' + n1(sx) + '" cy="' + (c.sunY || 170) + '" r="38" fill="' + c.sun + '"/>';
+      o += birds(R, 3, c.pine, -34, 6) + S.sky;
+      var bases = [250, 292, 334, 376, 420], amps = [70, 78, 70, 62, 44];
+      for (var i = 0; i < c.r.length; i++) {
+        o += '<path d="' + ridge(bases[i], amps[i], R, i < 3) + '" fill="' + c.r[i] + '"/>';
+        if (i < 3) o += '<defs><linearGradient id="' + id + 'm' + i + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + c.mist + '" stop-opacity="0"/><stop offset=".55" stop-color="' + c.mist + '" stop-opacity=".5"/><stop offset="1" stop-color="' + c.mist + '" stop-opacity="0"/></linearGradient></defs><rect x="0" y="' + (bases[i] - 26) + '" width="390" height="70" fill="url(#' + id + 'm' + i + ')"/>';
+        if (i === 1) o += S.far;
+      }
+      for (var t = 0; t < 14; t++) {
+        var tx = 8 + R() * 374, ty = 412 + R() * 40, th = 36 + R() * 34;
+        o += pine(tx, ty, th, t % 3 ? c.pine : c.r[4], null);
+      }
+      return o + S.near;
+    },
+    city: function (c, R, id, S) {
+      var o = skyRect(id, c.sky), mx = 240 + R() * 100;
+      if (c.moon) o += glow(id + 'g', mx, 186, 110, c.moon, 0.35) + '<circle cx="' + n1(mx) + '" cy="186" r="30" fill="' + c.moon + '"/>';
+      if (c.night) o += stars2(R, 40, '#ffffff', -80, 190);
+      o += skyline(330, c.b[0], null, R, 90, 170, 0, 0, null);
+      o += skyline(380, c.b[1], c.win, R, 90, 190, c.night ? 0.28 : 0.2, c.night ? 0.8 : 0.55, 60 + R() * 270) + S.far;
+      o += skyline(440, c.b[2], c.win, R, 70, 150, c.night ? 0.42 : 0.3, c.night ? 1 : 0.7, null);
+      return o + S.sky + S.near;
+    },
+    cafe: function (c, R, id, S) {
+      var o = '<defs>' + gradDef(id + 's', c.wall) + '</defs><rect y="-90" width="390" height="550" fill="url(#' + id + 's)"/>';
+      o += S.sky + '<circle cx="268" cy="268" r="178" fill="' + c.saucer + '" fill-opacity=".55"/><circle cx="268" cy="268" r="132" fill="' + c.cup + '" fill-opacity=".5"/>';
+      o += '<rect x="0" y="372" width="390" height="100" fill="' + c.table + '"/>';
+      for (var i = 0; i < 8; i++) o += '<rect x="' + (i * 52 - 8) + '" y="372" width="26" height="100" fill="#ffffff" fill-opacity=".06"/>';
+      for (var b = 0; b < 9; b++) {
+        var bx = 20 + R() * 350, by = 392 + R() * 56, br = R() * 180;
+        o += '<g transform="translate(' + n1(bx) + ' ' + n1(by) + ') rotate(' + n1(br) + ')"><ellipse rx="9" ry="6" fill="' + c.bean + '"/><path d="M-8 0 Q0 -3 8 0" stroke="' + c.wall[1] + '" stroke-opacity=".55" stroke-width="1.3" fill="none"/></g>';
+      }
+      o += '<ellipse cx="150" cy="392" rx="96" ry="18" fill="' + c.saucer + '"/><ellipse cx="150" cy="388" rx="70" ry="12" fill="' + c.cup + '" fill-opacity=".6"/>';
+      o += '<path d="M92 300 L208 300 Q204 388 150 390 Q96 388 92 300 Z" fill="' + c.cup + '"/>';
+      o += '<path d="M204 318 Q252 316 246 350 Q240 376 198 366" fill="none" stroke="' + c.cup + '" stroke-width="12" stroke-linecap="round"/>';
+      o += '<ellipse cx="150" cy="300" rx="58" ry="12" fill="' + c.coffee + '"/><ellipse cx="150" cy="298" rx="40" ry="6.5" fill="#ffffff" fill-opacity=".14"/>';
+      for (var s = 0; s < 3; s++) {
+        var sx = 124 + s * 26;
+        o += '<path d="M' + sx + ' 276 C' + (sx - 14) + ' 252 ' + (sx + 14) + ' 236 ' + sx + ' 210 C' + (sx - 10) + ' 192 ' + (sx + 8) + ' 178 ' + (sx + 2) + ' 160" fill="none" stroke="#ffffff" stroke-opacity="' + (0.7 - s * 0.12) + '" stroke-width="5" stroke-linecap="round"/>';
+      }
+      o += '<circle cx="316" cy="372" r="46" fill="' + c.donut + '"/><path d="M272 366 Q282 336 316 334 Q350 336 360 366 Q350 360 342 370 Q334 358 324 370 Q316 358 306 370 Q298 358 290 370 Q280 360 272 366 Z" fill="' + c.icing + '"/><circle cx="316" cy="372" r="14" fill="' + c.table + '"/>';
+      var sp = ['#ffffff', c.wall[1], c.coffee];
+      for (var d = 0; d < 9; d++) o += '<rect x="' + n1(288 + R() * 56) + '" y="' + n1(342 + R() * 22) + '" width="6" height="2.2" rx="1.1" fill="' + sp[d % 3] + '" transform="rotate(' + n1(R() * 180) + ' 316 352)"/>';
+      return o;
+    },
+    spring: function (c, R, id, S) {
+      var o = skyRect(id, c.sky);
+      o += glow(id + 'g', 300, 130, 190, '#ffffff', 0.7) + S.sky;
+      o += '<path d="' + ridge(392, 36, R, false) + '" fill="' + c.h[0] + '"/>' + S.far + '<path d="' + ridge(420, 34, R, false) + '" fill="' + c.h[1] + '"/><path d="' + ridge(446, 26, R, false) + '" fill="' + c.h[2] + '"/>';
+      var br = '<path d="M430 -10 C380 40 340 70 270 92 C220 108 170 110 110 150" fill="none" stroke="' + c.branch + '" stroke-width="9" stroke-linecap="round"/>' +
+        '<path d="M330 62 C318 100 300 128 262 150" fill="none" stroke="' + c.branch + '" stroke-width="5" stroke-linecap="round"/>' +
+        '<path d="M236 100 C226 70 200 56 176 46" fill="none" stroke="' + c.branch + '" stroke-width="4.5" stroke-linecap="round"/>' +
+        '<path d="M170 128 C150 150 128 190 120 220" fill="none" stroke="' + c.branch + '" stroke-width="4" stroke-linecap="round"/>';
+      o += br;
+      var pts = [[392, 8], [356, 40], [320, 62], [292, 84], [262, 100], [232, 104], [200, 112], [168, 124], [140, 138], [316, 96], [276, 130], [252, 150], [210, 70], [180, 52], [150, 160], [124, 204], [120, 226], [346, 90], [380, 52], [300, 40]];
+      for (var i = 0; i < pts.length; i++) {
+        var jx = (R() - 0.5) * 12, jy = (R() - 0.5) * 12, r = 11 + R() * 9;
+        o += flower(pts[i][0] + jx, pts[i][1] + jy, r, c.b[i % 3], c.b[2], R() * 72);
+      }
+      for (var p = 0; p < 26; p++) {
+        var x = R() * 390, y = 150 + R() * 280;
+        o += '<ellipse cx="' + n1(x) + '" cy="' + n1(y) + '" rx="5.5" ry="3" fill="' + c.b[p % 2] + '" fill-opacity="' + n1(0.55 + R() * 0.4) + '" transform="rotate(' + n1(R() * 180) + ' ' + n1(x) + ' ' + n1(y) + ')"/>';
+      }
+      return o + S.near;
+    },
+    autumn: function (c, R, id, S) {
+      var o = skyRect(id, c.sky), ax = 90 + R() * 210;
+      o += glow(id + 'g', ax, 206, 150, c.sun, 0.55) + '<circle cx="' + n1(ax) + '" cy="206" r="34" fill="' + c.sun + '" fill-opacity=".85"/>' + S.sky;
+      o += '<path d="' + ridge(310, 40, R, false) + '" fill="' + c.h[0] + '"/>' + S.far;
+      for (var a = 0; a < 9; a++) o += roundTree(20 + a * 44 + R() * 16, 318 + R() * 12, 54 + R() * 22, c.trunk, c.leaves[a % c.leaves.length]);
+      o += '<path d="' + ridge(366, 34, R, false) + '" fill="' + c.h[1] + '"/>';
+      for (var b = 0; b < 6; b++) o += roundTree(30 + b * 66 + R() * 20, 392 + R() * 14, 84 + R() * 34, c.trunk, c.leaves[(b + 1) % c.leaves.length]);
+      o += '<path d="' + ridge(424, 24, R, false) + '" fill="' + c.h[2] + '"/>';
+      for (var l = 0; l < 22; l++) o += leaf(R() * 390, 130 + R() * 320, 0.9 + R() * 0.9, R() * 360, c.leaves[l % c.leaves.length], c.ginkgo ? GINKGO : MAPLE);
+      return o + S.near;
+    },
+    winter: function (c, R, id, S) {
+      var o = skyRect(id, c.sky), mx = 240 + R() * 100;
+      o += glow(id + 'g', mx, 186, 110, c.moon, 0.5) + '<circle cx="' + n1(mx) + '" cy="186" r="30" fill="' + c.moon + '"/>';
+      if (c.night) o += stars2(R, 26, '#ffffff', -80, 170);
+      o += S.sky + '<path d="' + ridge(300, 44, R, false) + '" fill="' + c.h[0] + '"/>' + S.far;
+      for (var a = 0; a < 7; a++) o += pine(14 + a * 56 + R() * 18, 322 + R() * 14, 52 + R() * 24, c.pine, c.h[0]);
+      o += '<path d="' + ridge(356, 34, R, false) + '" fill="' + c.h[1] + '"/>';
+      for (var b = 0; b < 5; b++) o += pine(30 + b * 80 + R() * 26, 396 + R() * 14, 92 + R() * 36, c.pine, '#ffffff');
+      o += '<path d="' + ridge(418, 26, R, false) + '" fill="' + c.h[2] + '"/>';
+      for (var f = 0; f < 60; f++) o += '<circle cx="' + n1(R() * 390) + '" cy="' + n1(R() * 430) + '" r="' + n1(0.9 + R() * 2.4) + '" fill="#ffffff" fill-opacity="' + n1(0.35 + R() * 0.6) + '"/>';
+      return o + S.near;
+    },
+    night: function (c, R, id, S) {
+      var o = skyRect(id, c.sky), mx = 270 + R() * 70;
+      if (c.aurora) {
+        o += '<defs>' + gradDef(id + 'a', ['#7CE0B0', '#7CE0B0'], true) + '<linearGradient id="' + id + 'au" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="' + c.aurora[0] + '" stop-opacity="0"/><stop offset=".5" stop-color="' + c.aurora[0] + '" stop-opacity=".45"/><stop offset="1" stop-color="' + c.aurora[1] + '" stop-opacity="0"/></linearGradient></defs>';
+        o += '<path d="M0 250 C70 150 120 120 190 170 C250 210 300 120 390 90 L390 300 L0 300 Z" fill="url(#' + id + 'au)"/>';
+        o += '<path d="M0 290 C90 200 150 190 220 220 C290 250 340 170 390 150 L390 330 L0 330 Z" fill="url(#' + id + 'au)" fill-opacity=".7"/>';
+      }
+      o += stars2(R, 90, c.star, -80, 280);
+      for (var s = 0; s < 4; s++) o += spark(20 + R() * 350, -40 + R() * 240, 4 + R() * 3, '#ffffff', 0.85);
+      if (c.moon) o += glow(id + 'g', mx, 176, 90, c.moon, 0.4) + '<circle cx="' + n1(mx) + '" cy="176" r="22" fill="' + c.moon + '"/><circle cx="' + n1(mx + 9) + '" cy="170" r="19" fill="' + c.sky[1] + '" fill-opacity=".9"/>';
+      o += S.sky + '<path d="' + ridge(330, 50, R, false) + '" fill="' + c.h[0] + '"/>' + S.far;
+      for (var a = 0; a < 8; a++) o += pine(10 + a * 52 + R() * 20, 350 + R() * 12, 48 + R() * 26, c.h[1], null);
+      o += '<path d="' + ridge(392, 34, R, false) + '" fill="' + c.h[1] + '"/>';
+      var tx = 90 + R() * 80;
+      o += glow(id + 'f', tx + 62, 410, 110, c.glow, 0.5);
+      o += '<path d="M' + n1(tx) + ' 440 L' + n1(tx + 62) + ' 372 L' + n1(tx + 124) + ' 440 Z" fill="' + c.tent + '"/><path d="M' + n1(tx + 62) + ' 372 L' + n1(tx + 62) + ' 440" stroke="' + c.h[2] + '" stroke-opacity=".35" stroke-width="1.5"/><path d="M' + n1(tx + 50) + ' 440 L' + n1(tx + 62) + ' 408 L' + n1(tx + 74) + ' 440 Z" fill="' + c.glow + '"/>';
+      o += '<path d="' + ridge(440, 20, R, false) + '" fill="' + c.h[2] + '"/>';
+      for (var b = 0; b < 4; b++) o += pine(250 + b * 36 + R() * 20, 452, 66 + R() * 30, c.h[2], null);
+      return o + S.near;
+    },
+    temple: function (c, R, id, S) {
+      var o = skyRect(id, c.sky), sx = 190 + R() * 130;
+      o += glow(id + 'g', sx, 196, 120, c.sun, 0.35) + '<circle cx="' + n1(sx) + '" cy="196" r="50" fill="' + c.sun + '"/>';
+      o += birds(R, 4, c.roof, -34, 6) + S.sky;
+      o += '<path d="' + ridge(280, 62, R, true) + '" fill="' + c.m[0] + '"/><defs><linearGradient id="' + id + 'ma" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + c.mist + '" stop-opacity="0"/><stop offset=".55" stop-color="' + c.mist + '" stop-opacity=".7"/><stop offset="1" stop-color="' + c.mist + '" stop-opacity="0"/></linearGradient></defs><rect x="0" y="244" width="390" height="80" fill="url(#' + id + 'ma)"/>';
+      o += '<path d="' + ridge(330, 56, R, true) + '" fill="' + c.m[1] + '"/><rect x="0" y="306" width="390" height="70" fill="url(#' + id + 'ma)"/>';
+      o += hanokRoof(150 + R() * 40, 262, 0.9, c.roof, c.pillar, R) + S.far;
+      o += '<rect x="0" y="424" width="390" height="40" fill="' + c.roof + '"/>';
+      o += S.near;
+      for (var s = 0; s < 3; s++) o += '<rect x="' + (50 + s * 6) + '" y="' + (414 - s * 5) + '" width="' + (200 - s * 12) + '" height="5" fill="' + c.roof + '"/>';
+      return o;
+    },
+    resort: function (c, R, id, S) {
+      var o = skyRect(id, c.sky), sx = 90 + R() * 200;
+      o += glow(id + 'g', sx, c.sunY || 190, 150, c.sun, 0.6) + '<circle cx="' + n1(sx) + '" cy="' + (c.sunY || 190) + '" r="40" fill="' + c.sun + '"/>';
+      o += birds(R, 3, c.palm[0], -34, 6) + S.sky;
+      o += '<path d="' + wave(262, 3, 140, R() * TAU) + '" fill="' + c.w[0] + '"/>' + S.far + '<path d="' + wave(296, 5, 120, R() * TAU) + '" fill="' + c.w[1] + '"/><path d="' + wave(330, 7, 100, R() * TAU) + '" fill="' + c.w[2] + '"/>';
+      o += '<path d="M0 460 L0 392 Q90 366 200 384 Q300 400 390 372 L390 460 Z" fill="' + c.sand + '"/>';
+      o += '<path d="M0 392 Q90 366 200 384 Q300 400 390 372" fill="none" stroke="#ffffff" stroke-opacity=".6" stroke-width="3"/>';
+      o += palm(78 + R() * 20, 410, 150, 26, c.palm[0], c.palm[1], R) + palm(300 + R() * 24, 400, 118, -22, c.palm[0], c.palm[1], R);
+      return o + S.near;
+    },
+    classic: function (c, R, id, S) {
+      var o = '<rect y="-90" width="390" height="550" fill="' + c.wall + '"/>';
+      o += '<circle cx="' + n1(270 + R() * 40) + '" cy="196" r="58" fill="' + c.sun + '"/>';
+      o += arch(40, 170, 120, 300, c.arches[0]) + arch(140, 220, 110, 260, c.arches[1]) + arch(240, 150, 100, 330, c.arches[2]) + S.sky;
+      o += '<path d="M62 330 a38 38 0 0 1 76 0 v90 h-76 Z" fill="#ffffff" fill-opacity=".14"/><path d="M158 372 a37 37 0 0 1 74 0 v48 h-74 Z" fill="#ffffff" fill-opacity=".14"/>';
+      o += '<rect x="0" y="420" width="390" height="50" fill="' + c.ground + '"/>';
+      o += S.near;
+      for (var i = 0; i < 6; i++) o += '<rect x="' + (28 + i * 62) + '" y="' + (432 + (i % 2) * 6) + '" width="34" height="3" rx="1.5" fill="#ffffff" fill-opacity=".35"/>';
+      return o;
+    }
+  };
+
+  /* ---- kits: palette variants, type, copy ---- */
+  var KITS = {
+    sea: {
+      label: '바다', font: 'myeongjo', card: 'soft',
+      varName: ['맑은 낮', '노을'],
+      kw: ['바다', '해변', '해수욕', '바닷', '파도', '항구', '오션', '광안리', '해운대', '송정', '제주', '섬', '선셋', '일몰', '요트', '수영', '서핑', '속초', '강릉', '양양', '여수', '거제', '통영', '포항', '울릉', '해안'],
+      variants: [
+        { bg1: '#EAF6F8', bg2: '#CFE8EE', ink: '#0C3A4A', sub: '#4A7584', card: '#FFFFFF', cink: '#0C3A4A', csub: '#4A7584', acc: '#1B8CA6', line: '#8FCFDB', hink: '#0C3A4A', sky: ['#BCE6F1', '#DDF2F4', '#FFF1D6'], sun: '#FFD27A', bird: '#2A6C7E', l: ['#92D5E0', '#62BFCD', '#35A2B6', '#1D8199', '#0F6079'] },
+        { bg1: '#FBEFE6', bg2: '#F4D9C8', ink: '#3A2230', sub: '#8C6571', card: '#FFFCF8', cink: '#3A2230', csub: '#8C6571', acc: '#C4583F', line: '#E8B49E', hink: '#FFF6EA', sky: ['#2B3A67', '#D9776E', '#FFC48A'], sun: '#FFE7B0', sunY: 250, bird: '#2B2F55', l: ['#C46A62', '#8F5262', '#5C4465', '#3B3A62', '#232A4F'] }
+      ],
+      subs: ['짠 바람이 먼저 마중 나오는 날', '물결이 시간을 천천히 밀어 주는 날', '수평선 쪽으로 걸음을 맞춘 하루', '바다는 늘 그 자리에, 우리는 오늘', '소금기 섞인 바람과 느린 오후'],
+      ends: ['파도는 돌아가도 발자국은 남는다', '바다를 한참 바라본 하루였다', '짠 바람이 아직 옷에 배어 있다']
+    },
+    mountain: {
+      label: '산·숲', font: 'batang', card: 'soft',
+      varName: ['안개 낀 아침 숲', '푸른 새벽 산'],
+      kw: ['등산', '트레킹', '계곡', '폭포', '수목원', '정원', '둘레길', '올레', '케이블카', '전망대', '설악', '한라', '지리', '북한산', '오름', '호수', '등산로', '산행', '정상', '능선', '삼림욕', '숲길', '산속', '편백'],
+      variants: [
+        { bg1: '#EFF5EC', bg2: '#D8E6D6', ink: '#1C3326', sub: '#58705F', card: '#FFFFFF', cink: '#1C3326', csub: '#58705F', acc: '#2F7A57', line: '#A9CDB4', hink: '#1C3326', sky: ['#D5E9DA', '#EBF2E0', '#F9EFD2'], sun: '#FBE3A0', sunY: 176, mist: '#F4F8EE', pine: '#2E6249', r: ['#B7D0B1', '#8CB494', '#5E9372', '#3D7258', '#264F3F'] },
+        { bg1: '#EEF3F6', bg2: '#D5E1E9', ink: '#142B3B', sub: '#566F80', card: '#FFFFFF', cink: '#142B3B', csub: '#566F80', acc: '#2D6A8E', line: '#9FBDCF', hink: '#10283A', sky: ['#7396B6', '#B9CEDB', '#F6E3C6'], sun: '#FFF1CC', sunY: 190, mist: '#EAF1F5', pine: '#2B4D63', r: ['#A3B8C9', '#7B9AB1', '#557993', '#375972', '#233D54'] }
+      ],
+      subs: ['숲 냄새가 먼저 길을 알려 주는 날', '구름 아래를 천천히 걷는 하루', '오르는 만큼 조용해지는 시간', '나무 사이로 빛이 드는 오전과 오후'],
+      ends: ['내려오는 길에도 숲은 조용했다', '숨이 깊어진 하루였다']
+    },
+    city: {
+      label: '도시', font: 'blackhan', card: 'bar',
+      varName: ['밤 야경', '레트로 낮'],
+      kw: ['도시', '거리', '골목', '야경', '타워', '루프탑', '쇼핑', '시장', '백화점', '전시', '미술관', '박물관', '팝업', '클럽', '펍', '도쿄', '오사카', '서울', '홍대', '성수', '이태원', '명동', '시부야', '신주쿠', '홍콩', '방콕', '뉴욕', '파리', '런던', '번화가', '야시장'],
+      variants: [
+        { bg1: '#141B33', bg2: '#0B1022', ink: '#F3EEE4', sub: '#A9B0C6', card: '#1C2547', cink: '#F3EEE4', csub: '#A9B0C6', acc: '#FFB454', line: '#3A4672', hink: '#FFF4E0', night: 1, sky: ['#0C1329', '#1B2A52', '#C47A5A'], moon: '#FFE9B8', b: ['#2B3A66', '#1B2751', '#101A3A'], win: '#FFC76B' },
+        { bg1: '#FBF1E8', bg2: '#F0DCCB', ink: '#3B2428', sub: '#8A6A66', card: '#FFFDF9', cink: '#3B2428', csub: '#8A6A66', acc: '#D45A3A', line: '#E7BFA9', hink: '#3B2428', sky: ['#FFD3AE', '#FFE5CC', '#FFF5E6'], moon: '#FF8A5C', b: ['#E6B9A2', '#C98C7E', '#8E5E63'], win: '#FFE6C7' }
+      ],
+      subs: ['불이 켜지는 시간까지 걷는 도시', '골목마다 다른 속도로 흐르는 하루', '밤이 오면 더 선명해지는 거리'],
+      ends: ['불빛이 꺼질 때까지 걸었다', '도시의 밤은 생각보다 다정했다']
+    },
+    cafe: {
+      label: '카페·미식', font: 'songmyung', card: 'pill',
+      varName: ['에스프레소 브라운', '딸기우유 핑크'],
+      kw: ['카페', '커피', '디저트', '베이커리', '브런치', '케이크', '맛집', '식당', '라멘', '초밥', '스시', '야키토리', '이자카야', '고기', '삼겹', '파스타', '피자', '와인', '맥주', '조식', '점심', '저녁', '먹방', '푸드', '간식', '마라', '타코야키', '빵집', '한우', '오마카세'],
+      variants: [
+        { bg1: '#FBF4EA', bg2: '#F1E1CB', ink: '#3A271C', sub: '#8A6D58', card: '#FFFDF9', cink: '#3A271C', csub: '#8A6D58', acc: '#B8663A', line: '#E3C4A4', hink: '#3A271C', wall: ['#F6E8D6', '#EBD3B4'], table: '#8B5A3C', cup: '#FFFDF8', coffee: '#5A3623', saucer: '#EFE0CB', donut: '#E9B27A', icing: '#C9704F', bean: '#4A2C1D' },
+        { bg1: '#FFF3F1', bg2: '#F8DAD5', ink: '#4A2A2A', sub: '#A07474', card: '#FFFCFB', cink: '#4A2A2A', csub: '#A07474', acc: '#D1584F', line: '#F0BDB6', hink: '#4A2A2A', wall: ['#FCE6E3', '#F7CFCA'], table: '#D98D86', cup: '#FFFFFF', coffee: '#C98A7A', saucer: '#F9DAD5', donut: '#F4B7A0', icing: '#FFFFFF', bean: '#8A4B45' }
+      ],
+      subs: ['커피가 식기 전에 다음 이야기로', '달콤한 쪽으로 기울어진 하루', '한 입씩 천천히, 오래 앉아서'],
+      ends: ['마지막 한 모금까지 느긋했다', '접시가 비워질 때까지 이야기했다']
+    },
+    spring: {
+      label: '봄·꽃', font: 'batang', card: 'pill',
+      varName: ['벚꽃 분홍', '유채 노랑'],
+      kw: ['벚꽃', '유채', '튤립', '매화', '진해', '여의도', '석촌', '꽃놀이', '피크닉', '소풍', '공원', '철쭉', '개나리', '수국', '꽃구경', '봄나들이', '꽃길'],
+      variants: [
+        { bg1: '#FFF6F7', bg2: '#F9E1E6', ink: '#4A2A35', sub: '#9A6B78', card: '#FFFDFD', cink: '#4A2A35', csub: '#9A6B78', acc: '#D9657F', line: '#F2BFCB', hink: '#4A2A35', sky: ['#FBE0E7', '#FDEEF0', '#FFF8EC'], b: ['#F7B2C5', '#F9CCD8', '#FFFFFF'], branch: '#6B4A45', h: ['#CFE3B9', '#B5D3A0', '#98C088'] },
+        { bg1: '#F7FAEA', bg2: '#E5F0CC', ink: '#2E3A1C', sub: '#6C7D4C', card: '#FFFFFF', cink: '#2E3A1C', csub: '#6C7D4C', acc: '#6E9A2E', line: '#C5DC9C', hink: '#2E3A1C', sky: ['#E2F1D4', '#F3F7DC', '#FFF8D6'], b: ['#FFD84A', '#FFC928', '#FFF1A8'], branch: '#6A5A3A', h: ['#C9E3A5', '#A7D07B', '#7DB65E'] }
+      ],
+      subs: ['꽃잎이 먼저 도착한 봄날', '바람에 분홍이 섞이는 오후', '걷다 보면 어깨에 봄이 앉는다'],
+      ends: ['꽃잎 하나쯤은 주머니에 넣어 왔다', '봄은 짧아서 더 오래 기억난다']
+    },
+    autumn: {
+      label: '가을', font: 'myeongjo', card: 'soft',
+      varName: ['붉은 단풍', '노란 은행'],
+      kw: ['단풍', '가을', '낙엽', '은행', '억새', '핑크뮬리', '내장산', '설악산', '남이섬', '갈대', '코스모스'],
+      variants: [
+        { bg1: '#FCF3E7', bg2: '#F3DDC0', ink: '#3A2218', sub: '#8A6652', card: '#FFFDF9', cink: '#3A2218', csub: '#8A6652', acc: '#C4502B', line: '#EBC3A0', hink: '#3A2218', sky: ['#FBD9B8', '#FBE8D0', '#FFF4E2'], sun: '#F6A04D', leaves: ['#C8432B', '#E2682F', '#F0A13A', '#8E2F26'], trunk: '#5A3A2A', h: ['#E8B988', '#D18B5A', '#A95E3E'] },
+        { bg1: '#FFF9E8', bg2: '#F6E7B8', ink: '#3D2E0F', sub: '#8C7A45', card: '#FFFDF4', cink: '#3D2E0F', csub: '#8C7A45', acc: '#C98A12', line: '#EBD28A', hink: '#3D2E0F', ginkgo: 1, sky: ['#FFEDB4', '#FFF5D2', '#FFFBEA'], sun: '#F2B632', leaves: ['#F2B632', '#F7CF55', '#E39A1F', '#C98412'], trunk: '#6A4A2A', h: ['#EDD08F', '#D9B25F', '#B58B3C'] }
+      ],
+      subs: ['낙엽 밟는 소리가 박자를 맞추는 날', '노랗고 붉은 길을 따라 걷는 하루', '해가 일찍 기우는 계절의 오후'],
+      ends: ['주머니마다 가을이 한 장씩', '저녁 빛이 유난히 길었다']
+    },
+    winter: {
+      label: '겨울', font: 'notoserif', card: 'soft',
+      varName: ['눈 내린 낮', '눈 오는 밤'],
+      kw: ['겨울', '스키', '스노보드', '온천', '눈꽃', '설경', '크리스마스', '삿포로', '오타루', '홋카이도', '평창', '대관령', '핀란드', '썰매', '빙어', '얼음', '눈썰매', '눈사람', '설산'],
+      variants: [
+        { bg1: '#F2F7FB', bg2: '#DCE8F1', ink: '#17303F', sub: '#5D7889', card: '#FFFFFF', cink: '#17303F', csub: '#5D7889', acc: '#2F78A6', line: '#B6D2E4', hink: '#17303F', sky: ['#CBE0F0', '#E6F0F8', '#FAFCFE'], moon: '#FFFFFF', h: ['#FFFFFF', '#E3EEF6', '#C9DCEB'], pine: '#3F6B6A' },
+        { bg1: '#14283A', bg2: '#0B1A28', ink: '#EAF3F8', sub: '#9DB6C6', card: '#1B3347', cink: '#EAF3F8', csub: '#9DB6C6', acc: '#8CC8E8', line: '#35566F', hink: '#F4FAFF', night: 1, sky: ['#0F2438', '#1D3C57', '#3F6A86'], moon: '#FFF6D8', h: ['#8FB1C9', '#6D93AF', '#47688A'], pine: '#0E2A3A' }
+      ],
+      subs: ['입김이 먼저 앞서가는 하루', '눈 밟는 소리만 선명한 오후', '따뜻한 곳을 향해 천천히'],
+      ends: ['차가운 공기 끝에 따뜻한 저녁', '손이 시려도 웃음은 따뜻했다']
+    },
+    night: {
+      label: '별밤·캠핑', font: 'myeongjo', card: 'soft',
+      varName: ['숲속 캠핑 밤', '오로라 밤'],
+      kw: ['캠핑', '글램핑', '불멍', '차박', '모닥불', '은하수', '야영', '텐트', '오로라', '밤하늘', '별자리', '천문대', '별빛', '별구경'],
+      variants: [
+        { bg1: '#0F2227', bg2: '#08151A', ink: '#EAF3EE', sub: '#9DB8B3', card: '#15303A', cink: '#EAF3EE', csub: '#9DB8B3', acc: '#F0B060', line: '#2D5760', hink: '#F3F8F2', sky: ['#08141F', '#0F2A33', '#1F4A4B'], star: '#FFFFFF', moon: '#FFF3CF', h: ['#13363A', '#0D2A2E', '#081C20'], tent: '#E8A25B', glow: '#FFC978' },
+        { bg1: '#0C1F22', bg2: '#06121A', ink: '#E6F6EF', sub: '#94B8AD', card: '#12302F', cink: '#E6F6EF', csub: '#94B8AD', acc: '#7CE0B0', line: '#25605A', hink: '#F0FBF5', aurora: ['#5BE3A8', '#3FB6D0'], sky: ['#06121C', '#0C2B2E', '#1B5A55'], star: '#FFFFFF', h: ['#0D2A2B', '#081D20', '#051316'], tent: '#4FC6B0', glow: '#8CF2CC' }
+      ],
+      subs: ['별이 켜지면 이야기도 길어진다', '모닥불 빛이 얼굴을 데워 주는 밤', '조용할수록 하늘은 가까워진다'],
+      ends: ['별 하나쯤은 같이 봤다', '불이 잦아들 때까지 앉아 있었다']
+    },
+    temple: {
+      label: '고궁·전통', font: 'notoserif', card: 'sharp',
+      varName: ['청자와 먹', '단청 붉은빛'],
+      kw: ['고궁', '경복궁', '창덕궁', '한옥', '사찰', '사원', '신사', '유적', '경주', '전주', '교토', '나라', '북촌', '서촌', '한복', '전통', '불국사', '템플스테이', '기요미즈', '후시미', '성곽', '산성', '왕궁', '대궐'],
+      variants: [
+        { bg1: '#F4F2E8', bg2: '#E3E4D6', ink: '#1F2B2E', sub: '#667572', card: '#FFFEF9', cink: '#1F2B2E', csub: '#667572', acc: '#B4422F', line: '#C3CBBB', hink: '#1F2B2E', sky: ['#E1ECE5', '#F2F0E4', '#FAF3E1'], sun: '#C9503C', m: ['#C5D4C8', '#A3BAAC'], roof: '#23303A', pillar: '#8E3B2F', mist: '#F6F3E8' },
+        { bg1: '#FBF0DC', bg2: '#F0DDBA', ink: '#2B211B', sub: '#8A7358', card: '#FFFCF4', cink: '#2B211B', csub: '#8A7358', acc: '#B1362C', line: '#E2C99A', hink: '#2B211B', sky: ['#F5DFBC', '#F9EBD1', '#FFF6E6'], sun: '#D8453A', m: ['#E2C8A4', '#CBA882'], roof: '#2B2623', pillar: '#B1362C', mist: '#FBF1DD' }
+      ],
+      subs: ['오래된 지붕 아래 느려지는 시간', '처마 끝에 걸린 오후의 빛', '고요를 따라 천천히 걷는 하루'],
+      ends: ['기와 위로 해가 천천히 졌다', '조용한 것들이 오래 남았다']
+    },
+    resort: {
+      label: '휴양', font: 'jua', card: 'pill',
+      varName: ['투명한 라군', '선셋 비치'],
+      kw: ['휴양', '리조트', '풀빌라', '수영장', '세부', '보라카이', '푸껫', '다낭', '발리', '괌', '사이판', '하와이', '몰디브', '오키나와', '코사무이', '칸쿤', '스노클링', '다이빙', '비치'],
+      variants: [
+        { bg1: '#EAF9F8', bg2: '#CDEDEC', ink: '#0F3B3F', sub: '#4C7C7F', card: '#FFFFFF', cink: '#0F3B3F', csub: '#4C7C7F', acc: '#0E9AA3', line: '#9CDCD8', hink: '#0F3B3F', sky: ['#7ED3E0', '#BDEBEF', '#FFF2D6'], sun: '#FFE08A', sunY: 192, w: ['#5ED0D2', '#2FB5C0', '#14909E'], sand: '#F6E2B8', palm: ['#1E6B5A', '#2E8C6B'] },
+        { bg1: '#FFF1E4', bg2: '#FAD9BC', ink: '#4A2A24', sub: '#9A6A58', card: '#FFFCF8', cink: '#4A2A24', csub: '#9A6A58', acc: '#D9603F', line: '#F0C3A2', hink: '#4A2A24', sky: ['#FF9E7A', '#FFC79A', '#FFE8B8'], sun: '#FFF3C4', sunY: 230, w: ['#F7A07C', '#E5806F', '#C8625F'], sand: '#F3D6A6', palm: ['#3A2B3A', '#52394A'] }
+      ],
+      subs: ['시간을 잊기 좋은 해변의 하루', '야자수 그늘에서 느려지는 오후', '햇빛과 파도, 그 사이의 낮잠'],
+      ends: ['모래가 신발에 남아 있다', '해가 질 때까지 아무것도 안 했다']
+    },
+    classic: {
+      label: '기본', font: 'notoserif', card: 'sharp',
+      varName: ['테라코타', '세이지'],
+      kw: [],
+      variants: [
+        { bg1: '#FBF3EA', bg2: '#F1E0CC', ink: '#3A261C', sub: '#8A6A58', card: '#FFFDF9', cink: '#3A261C', csub: '#8A6A58', acc: '#C4623A', line: '#E6C9AE', hink: '#3A261C', wall: '#F3E6D6', arches: ['#D9774E', '#F2B27A', '#9C4A32'], sun: '#F7D08A', ground: '#C9855F' },
+        { bg1: '#F1F5EC', bg2: '#DDE6D5', ink: '#1E2E25', sub: '#5C7264', card: '#FFFFFF', cink: '#1E2E25', csub: '#5C7264', acc: '#3C6B50', line: '#B8CDBB', hink: '#1E2E25', wall: '#E5EBDD', arches: ['#6E8F73', '#A8BFA2', '#2F4A3C'], sun: '#F0D9A0', ground: '#47634F' }
+      ],
+      subs: ['계획대로, 그리고 조금은 계획 밖으로', '시간표 위에 놓은 하루', '하나씩 지나온 길의 기록'],
+      ends: ['계획한 만큼, 그보다 조금 더', '돌아보니 길이 한 줄로 이어져 있다']
+    }
+  };
+  var KIT_IDS = ['sea', 'mountain', 'city', 'cafe', 'spring', 'autumn', 'winter', 'night', 'temple', 'resort', 'classic'];
+  var SCENE_OF = { sea: 'sea', mountain: 'mountain', city: 'city', cafe: 'cafe', spring: 'spring', autumn: 'autumn', winter: 'winter', night: 'night', temple: 'temple', resort: 'resort', classic: 'classic' };
+  function kitScene(t) {
+    var v = kitVariant(t), id = 'k' + (t.seed >>> 0).toString(36);
+    var S = buildSlots(t, v, rng(((t.seed >>> 0) ^ 0x9E3779B9) >>> 0));
+    return '<svg class="dz-art" viewBox="0 -70 390 530" preserveAspectRatio="xMidYMax slice" aria-hidden="true">' + SCENES[SCENE_OF[t.kit] || 'classic'](v, rng(t.seed >>> 0), id, S) + '</svg>';
+  }
+
+
+  var FONTS = {
+    myeongjo: ['Nanum Myeongjo', 'Nanum+Myeongjo:wght@400;700;800', 800],
+    batang: ['Gowun Batang', 'Gowun+Batang:wght@400;700', 700],
+    blackhan: ['Black Han Sans', 'Black+Han+Sans', 400],
+    songmyung: ['Song Myung', 'Song+Myung', 400],
+    notoserif: ['Noto Serif KR', 'Noto+Serif+KR:wght@400;600;800', 700],
+    jua: ['Jua', 'Jua', 400]
+  };
   var loadedFonts = {};
   function ensureFont(key) {
     var f = FONTS[key];
@@ -2917,102 +3632,119 @@
     l.href = 'https://fonts.googleapis.com/css2?family=' + f[1] + '&display=swap';
     document.head.appendChild(l);
   }
-  function patternURI(kind, c) {
-    var svg = '';
-    if (kind === 'waves') svg = "<svg xmlns='http://www.w3.org/2000/svg' width='80' height='28'><path d='M0 14 Q10 4 20 14 T40 14 T60 14 T80 14' fill='none' stroke='" + c + "' stroke-width='1.6' stroke-opacity='.32'/></svg>";
-    else if (kind === 'dots') svg = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><circle cx='3' cy='3' r='1.5' fill='" + c + "' fill-opacity='.32'/></svg>";
-    else if (kind === 'stars') svg = "<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90'><g fill='" + c + "' fill-opacity='.45'><path d='M20 12l1.6 4.4L26 18l-4.4 1.6L20 24l-1.6-4.4L14 18l4.4-1.6z'/><circle cx='64' cy='22' r='1.4'/><circle cx='46' cy='60' r='1.1'/><path d='M70 58l1.1 3 3 1.1-3 1.1-1.1 3-1.1-3-3-1.1 3-1.1z'/><circle cx='16' cy='70' r='1.3'/></g></svg>";
-    else if (kind === 'petals') svg = "<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70'><g fill='" + c + "' fill-opacity='.28'><ellipse cx='18' cy='18' rx='7' ry='3.5' transform='rotate(35 18 18)'/><ellipse cx='52' cy='48' rx='6' ry='3' transform='rotate(-25 52 48)'/></g></svg>";
-    else if (kind === 'grid') svg = "<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M22 0H0V22' fill='none' stroke='" + c + "' stroke-opacity='.22'/></svg>";
-    else return 'none';
-    return 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")';
-  }
 
-  /* local fallback theme (used when AI is unavailable) */
-  var THEMES = {
-    sea: { kw: ['바다', '해변', '해수욕', '바닷', '파도', '항구', '오션', '광안리', '해운대', '제주', '섬'], palette: { bg1: '#EEF8FB', bg2: '#D6EEF5', card: '#FFFFFF', ink: '#0E3442', sub: '#4B7486', acc: '#3CC2D4', acc2: '#1C84AA' }, emoji: '🌊', pattern: 'waves', font: 'rounded', title: '바다로 가는 날', subtitle: '파도 소리 따라 한 칸씩 채운 하루', keywords: ['바다', '산들바람', '여유'], daySubs: ['바다 냄새 가득한 하루', '물결처럼 느긋하게'], closing: '짠내 나는 추억, 잔뜩 담아 오기' },
-    night: { kw: ['야경', '타워', '루프탑', '불꽃', '스카이', '전망대', '밤'], palette: { bg1: '#191C33', bg2: '#0D1022', card: '#22264A', ink: '#EEF0FF', sub: '#A9AFD6', acc: '#9AA6FF', acc2: '#6170F0' }, emoji: '🌙', pattern: 'stars', font: 'elegant', title: '반짝이는 밤의 기록', subtitle: '불빛이 켜지는 순간까지 꽉 채운 계획', keywords: ['야경', '반짝', '설렘'], daySubs: ['불빛을 따라 걷는 날', '밤이 더 빛나는 날'], closing: '오늘 밤의 반짝임을 오래 기억하기' },
-    nature: { kw: ['숲', '공원', '등산', '계곡', '정원', '수목원', '캠핑', '호수', '산책', '꽃'], palette: { bg1: '#F1F7F0', bg2: '#DDEADD', card: '#FFFFFF', ink: '#1C2B21', sub: '#5A6E60', acc: '#5CC08A', acc2: '#2C8A5A' }, emoji: '🌿', pattern: 'petals', font: 'serif', title: '초록빛 쉼표', subtitle: '바람과 나무 사이를 천천히 걷는 하루', keywords: ['초록', '산책', '쉼'], daySubs: ['숲 냄새로 시작하는 하루', '천천히, 더 천천히'], closing: '초록빛 숨을 크게 들이쉬기' },
-    cafe: { kw: ['카페', '디저트', '베이커리', '브런치', '커피', '빵', '케이크'], palette: { bg1: '#FBF5EF', bg2: '#F2E5D6', card: '#FFFDFA', ink: '#3A2A20', sub: '#7A6556', acc: '#D49A6A', acc2: '#A2683F' }, emoji: '☕', pattern: 'dots', font: 'hand', title: '달콤한 하루 코스', subtitle: '커피 향 따라 느긋하게 이어지는 계획', keywords: ['커피', '디저트', '느긋'], daySubs: ['달달하게 채운 하루', '한 모금씩 천천히'], closing: '달콤했던 순간들, 사진으로 남기기' },
-    city: { kw: ['쇼핑', '시장', '거리', '백화점', '전시', '미술관', '박물관', '팝업', '골목'], palette: { bg1: '#F7F3F9', bg2: '#ECE3F2', card: '#FFFFFF', ink: '#2B2233', sub: '#6C5F78', acc: '#BC8BE0', acc2: '#8355B5' }, emoji: '🛍️', pattern: 'grid', font: 'sans', title: '도시 산책 노트', subtitle: '골목마다 새로운 걸 발견하는 하루', keywords: ['도시', '발견', '골목'], daySubs: ['골목을 누비는 하루', '새로운 발견의 날'], closing: '오늘 발견한 것들, 잊지 않기' },
-    base: { kw: [], palette: { bg1: '#FBF5EF', bg2: '#F3E7DC', card: '#FFFFFF', ink: '#2A221D', sub: '#7A6C62', acc: '#FF9A55', acc2: '#EC6A24' }, emoji: '🧭', pattern: 'dots', font: 'serif', title: '우리의 한 길', subtitle: '계획한 시간들이 한 줄로 이어진 하루', keywords: ['여행', '설렘', '기록'], daySubs: ['설렘으로 여는 하루', '한 걸음씩 채우는 하루'], closing: '계획보다 더 좋은 하루가 되길' }
-  };
-  var STOP_RULES = [
-    [['공항', '비행', '항공'], '✈️', '이동'],
-    [['KTX', '기차', '버스', '지하철', '택시', '이동', '출발', '도착', '환승', '드라이브'], '🚆', '이동'],
-    [['체크인', '체크아웃', '숙소', '호텔', '펜션', '짐'], '🏨', '숙소'],
-    [['카페', '커피', '디저트', '베이커리', '빵'], '☕', '카페'],
-    [['아침', '점심', '저녁', '식사', '브런치', '맛집', '식당', '밥', '라멘', '고기', '야키토리'], '🍽️', '식사'],
-    [['쇼핑', '시장', '백화점', '아울렛', '기념품'], '🛍️', '쇼핑'],
-    [['바다', '해변', '해수욕'], '🌊', '바다'],
-    [['야경', '타워', '전망'], '🌃', '야경'],
-    [['산책', '공원', '숲', '정원'], '🌿', '산책'],
-    [['박물관', '미술관', '전시', '관람', '투어', '사원', '절'], '🏛️', '관광'],
-    [['사진', '포토'], '📸', '사진'],
-    [['휴식', '수면', '쉬기', '잠'], '🛌', '휴식']
-  ];
-  function stopGuess(text) {
-    for (var i = 0; i < STOP_RULES.length; i++) {
-      var r = STOP_RULES[i];
-      for (var j = 0; j < r[0].length; j++) if (text.indexOf(r[0][j]) >= 0) return { emoji: r[1], tag: r[2] };
-    }
-    return { emoji: '📍', tag: '일정' };
-  }
-  function localTheme(p) {
-    var all = [];
+  /* picking a kit locally (used when AI is unavailable, and as the safety net) */
+  function planText(p) {
+    var all = [p.title || ''];
     p.days.forEach(function (d) { d.blocks.forEach(function (b) { all.push(b.text || ''); }); });
-    all = all.join(' ');
-    var best = 'base', score = 0;
-    Object.keys(THEMES).forEach(function (k) {
+    return all.join(' ');
+  }
+  function themeSeed(p) { return hashStr(p.shared ? p.shared.sid : p.id); }
+  function rankKits(p) {
+    var text = planText(p), seed = themeSeed(p), R = rng(seed), score = {}, order = KIT_IDS.slice();
+    KIT_IDS.forEach(function (k) {
       var n = 0;
-      THEMES[k].kw.forEach(function (w) { if (all.indexOf(w) >= 0) n++; });
-      if (n > score) { score = n; best = k; }
+      KITS[k].kw.forEach(function (w) { if (text.indexOf(w) >= 0) n++; });
+      score[k] = n;
     });
-    var T = THEMES[best], stops = {};
-    p.days.forEach(function (d) {
-      d.blocks.forEach(function (b) { var g = stopGuess(b.text || ''); stops[b.id] = { emoji: g.emoji, tag: g.tag, note: '' }; });
+    var m = new Date(p.completed ? p.completed.at : Date.now()).getMonth();
+    var season = (m >= 2 && m <= 4) ? 'spring' : (m >= 9 && m <= 10) ? 'autumn' : (m === 11 || m <= 1) ? 'winter' : (m === 6 || m === 7) ? 'sea' : null;
+    if (season) score[season] += 0.5;
+    score.classic = 0.2;
+    for (var i = order.length - 1; i > 0; i--) { var j = Math.floor(R() * (i + 1)), t = order[i]; order[i] = order[j]; order[j] = t; }
+    order.sort(function (a, b) { return score[b] - score[a]; });
+    return order;
+  }
+  var MOTIF_KW = {
+    bridge: ['광안대교', '대교', '다리', '브릿지'], lighthouse: ['등대'], sailboat: ['요트', '유람선', '페리', '보트', '크루즈'],
+    ferris: ['관람차', '놀이공원', '롯데월드', '에버랜드', '아이스크림 먹'], tower: ['타워', '남산', '스카이트리'],
+    pagoda: ['다보탑', '석가탑', '불국사', '오층', '석탑'], castle: ['디즈니', '궁전', '캐슬'], torii: ['신사', '토리이', '후시미'],
+    train: ['기차', 'KTX', 'SRT', '열차', '신칸센', '지하철'], tent: ['캠핑', '텐트', '차박'], cake: ['생일', '케이크', '기념일', '파티'],
+    balloons: ['생일', '풍선', '파티'], hearts: ['데이트', '기념일', '커플', '연애', '사랑', '프로포즈', '일주년'], plane: ['공항', '비행기', '항공', '출국', '입국'], cloud: []
+  };
+  function guessMotifs(p, kit, R) {
+    if (kit === 'cafe') return [];
+    var text = planText(p), list = [];
+    MOTIF_NAMES.forEach(function (m) {
+      var n = 0; (MOTIF_KW[m] || []).forEach(function (w) { if (text.indexOf(w) >= 0) n++; });
+      if (n) list.push([m, n]);
     });
-    return {
-      src: 'local', title: T.title, subtitle: T.subtitle, emoji: T.emoji, keywords: T.keywords.slice(),
-      palette: fixPalette(Object.assign({}, T.palette)), font: T.font, pattern: T.pattern,
-      days: p.days.map(function (d, i) { return T.daySubs[i % T.daySubs.length]; }),
-      stops: stops, closing: T.closing
-    };
+    list.sort(function (a, b) { return b[1] - a[1]; });
+    var zones = ['left', 'right'], z = R() < 0.5 ? 0 : 1, out = [], slots = {};
+    list.forEach(function (it) {
+      var d = MOTIFS[it[0]]; if (out.length >= 2 || slots[d.slot]) return;
+      slots[d.slot] = 1; out.push({ name: it[0], zone: d.wide ? 'center' : zones[(z + out.length) % 2] });
+    });
+    return out;
   }
-  function clip(x, max, def) {
-    x = typeof x === 'string' ? x.trim() : '';
-    if (!x) return def;
-    return x.length > max ? x.slice(0, max) : x;
+  var TONES = { warm: [-9, 1.04, 0], cool: [13, 1, 0], soft: [0, 0.84, 0.025], vivid: [0, 1.14, 0], muted: [0, 0.72, 0], neutral: [0, 1, 0] };
+  function toneParams(tone, seed) {
+    var R = rng((seed >>> 0) ^ 0x51ED270B), T = TONES[tone] || TONES.neutral;
+    var hue = Math.max(-28, Math.min(28, T[0] + (R() - 0.5) * 16));
+    return { hue: Math.round(hue), sat: T[1], lit: T[2] };
   }
-  function emojiOk(x) { return typeof x === 'string' && x.length > 0 && x.length <= 8 && /\p{Extended_Pictographic}/u.test(x); }
-  function sanitizeTheme(raw, p) {
+  function localTheme(p, prev) {
+    var rank = rankKits(p), kit = rank[0], K, variant, seed;
+    if (prev && KITS[prev.kit]) {
+      /* dice: step through the other variant first, then the next-best kit */
+      var pk = KITS[prev.kit], at = rank.indexOf(prev.kit);
+      if (pk.variants.length > 1 && (prev.variant | 0) === 0) { kit = prev.kit; variant = 1; }
+      else { kit = rank[(at + 1) % rank.length]; variant = 0; }
+      seed = (Math.random() * 4294967296) >>> 0;
+    } else {
+      seed = themeSeed(p);
+      variant = (seed >>> 3) % KITS[kit].variants.length;
+    }
+    K = KITS[kit];
+    var tp = toneParams('neutral', seed);
+    return { v: 2, src: 'local', kit: kit, variant: variant, seed: seed, hue: tp.hue, sat: tp.sat, lit: tp.lit,
+      motifs: guessMotifs(p, kit, rng(seed ^ 0xA5A5)), props: [],
+      subtitle: K.subs[seed % K.subs.length], closing: K.ends[(seed >>> 5) % K.ends.length] };
+  }
+  var COPY_BAN = /(설레|설렘|추억|가득|한 줄|소중한|특별한|힐링|감성|여정|낭만|행복|되길|[!?.#]|[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}])/u;
+  function copyOk(x, max, def) {
+    x = typeof x === 'string' ? x.replace(/\s+/g, ' ').trim() : '';
+    if (!x || x.length > max || COPY_BAN.test(x)) return def;
+    return x;
+  }
+  function sanitizeTheme(raw, p, prev) {
     if (!raw || typeof raw !== 'object') throw { code: 'invalid_json' };
-    var base = localTheme(p), rp = raw.palette || {}, pl = {};
-    ['bg1', 'bg2', 'card', 'ink', 'sub', 'acc', 'acc2'].forEach(function (k) { pl[k] = hexOk(rp[k]) ? rp[k] : base.palette[k]; });
-    var map = {};
-    if (Array.isArray(raw.stops)) raw.stops.forEach(function (x) { if (x && typeof x.id === 'string') map[x.id] = x; });
-    else if (raw.stops && typeof raw.stops === 'object') map = raw.stops;
-    var stops = {};
-    p.days.forEach(function (d) {
-      d.blocks.forEach(function (b) {
-        var x = map[b.id] || {}, bs = base.stops[b.id];
-        stops[b.id] = { emoji: emojiOk(x.emoji) ? x.emoji : bs.emoji, tag: clip(x.tag, 6, bs.tag), note: clip(x.note, 44, '') };
-      });
+    var base = localTheme(p, prev);
+    var kit = KITS[raw.kit] ? raw.kit : base.kit, K = KITS[kit];
+    var variant = (typeof raw.variant === 'number' && raw.variant >= 0 && raw.variant < K.variants.length) ? Math.floor(raw.variant) : (base.kit === kit ? base.variant : 0);
+    if (prev && prev.kit === kit && (prev.variant | 0) === variant && K.variants.length > 1) variant = 1 - variant;
+    var seed = (Math.random() * 4294967296) >>> 0, tp = toneParams(raw.tone, seed);
+    var motifs = [], seenSlot = {};
+    (Array.isArray(raw.motifs) ? raw.motifs : []).forEach(function (m) {
+      var name = typeof m === 'string' ? m : m && m.name, d = MOTIFS[name];
+      if (!d || motifs.length >= 3 || (d.slot !== 'sky' && seenSlot[d.slot])) return;
+      seenSlot[d.slot] = 1;
+      motifs.push({ name: name, zone: (m && ZONES[m.zone]) ? m.zone : 'center' });
     });
-    var kws = Array.isArray(raw.keywords) ? raw.keywords.map(function (k) { return clip(k, 10, ''); }).filter(Boolean).slice(0, 4) : [];
+    if (!motifs.length && !(Array.isArray(raw.props) && raw.props.length)) motifs = guessMotifs(p, kit, rng(seed ^ 0xA5A5));
+    var dummy = { sil: '#000000', lit: '#ffffff', acc: '#ff0000', sun: '#ffff00' }, props = [];
+    (Array.isArray(raw.props) ? raw.props : []).forEach(function (x) {
+      if (!x || props.length >= 2 || typeof x.svg !== 'string' || !cleanProp(x.svg, dummy)) return;
+      props.push({ svg: x.svg, zone: ZONES[x.zone] ? x.zone : 'center', size: x.size === 'large' || x.size === 'small' ? x.size : 'medium', slot: x.slot === 'sky' || x.slot === 'near' ? x.slot : 'far' });
+    });
     return {
-      src: 'ai',
-      title: clip(raw.title, 26, base.title),
-      subtitle: clip(raw.subtitle, 50, base.subtitle),
-      emoji: emojiOk(raw.emoji) ? raw.emoji : base.emoji,
-      keywords: kws.length ? kws : base.keywords,
-      palette: fixPalette(pl),
-      font: FONTS[raw.font] ? raw.font : base.font,
-      pattern: PATTERNS.indexOf(raw.pattern) >= 0 ? raw.pattern : base.pattern,
-      days: p.days.map(function (d, i) { return clip(raw.days && raw.days[i] && raw.days[i].subtitle, 26, base.days[i]); }),
-      stops: stops,
-      closing: clip(raw.closing, 50, base.closing)
+      v: 2, src: 'ai', kit: kit, variant: variant, seed: seed, hue: tp.hue, sat: tp.sat, lit: tp.lit,
+      motifs: motifs, props: props,
+      subtitle: copyOk(raw.subtitle, 34, base.subtitle),
+      closing: copyOk(raw.closing, 30, base.closing)
     };
+  }
+  /* themes saved by older versions are converted once, deterministically */
+  function normalizeTheme(t, p) {
+    if (t && t.v === 2 && KITS[t.kit]) {
+      if (typeof t.hue !== 'number') { t.hue = 0; t.sat = 1; t.lit = 0; }
+      if (!Array.isArray(t.motifs)) t.motifs = [];
+      if (!Array.isArray(t.props)) t.props = [];
+      return t;
+    }
+    var b = localTheme(p);
+    if (t && t.src === 'ai') b.src = 'ai';
+    return b;
   }
 
   /* AI: Claude reads the plan and designs the theme (published page "sample" capability) */
@@ -3026,31 +3758,53 @@
     return samplePromise;
   }
   getSample();
-  function aiTheme(p) {
+  function aiTheme(p, prev) {
     return getSample().then(function (sample) {
       var lines = [];
       p.days.forEach(function (d, i) {
         lines.push('Day ' + (i + 1));
-        d.blocks.forEach(function (b) { lines.push('- id=' + b.id + ' | ' + fmt(b.start) + '~' + fmt(b.start + b.dur) + ' | ' + (b.text || '(제목 없음)')); });
+        d.blocks.forEach(function (b) { lines.push('- ' + fmt(b.start) + '~' + fmt(b.start + b.dur) + ' ' + (b.text || '(제목 없음)')); });
       });
+      var table = KIT_IDS.map(function (k) {
+        return '- ' + k + ' (' + KITS[k].label + '): ' + KITS[k].variants.map(function (v, i) { return i + '=' + KITS[k].varName[i]; }).join(', ');
+      }).join('\n');
       var prompt = [
-        '너는 여행 계획을 읽고, 완성된 계획 페이지의 테마를 정하는 디자이너야.',
-        '아래 계획을 읽고 분위기에 어울리는 테마를 JSON 객체 하나로만 답해. 설명이나 마크다운 없이 JSON만.',
+        '너는 여행 잡지의 아트 디렉터 겸 에디터야. 사용자가 완성한 여행 계획 하나만을 위한 맞춤 완성 페이지를 설계해.',
+        '반드시 JSON 객체 하나로만 답해. 설명, 마크다운, 코드블록 금지.',
         '',
-        '규칙:',
-        '- 모든 문구는 한국어로, 짧고 감성적으로.',
-        '- 계획에 없는 일정을 추가하지 마. 장소의 영업시간, 가격, 주소 같은 사실 정보를 지어내지 마. note는 그 일정의 기대감이나 분위기를 표현하는 한 줄.',
-        '- palette는 계획 분위기에 맞는 톤온톤 조합. bg1, bg2는 페이지 배경(아주 연하거나 아주 어두운 색), card는 카드 배경, ink는 card 위 글자색(대비가 충분해야 함), sub는 보조 글자색, acc와 acc2는 같은 계열의 포인트 색(acc가 더 밝게). 모두 #RRGGBB.',
-        '- font는 serif, rounded, hand, elegant, sans 중 하나. pattern은 waves, dots, stars, petals, grid, none 중 하나. emoji는 이모지 1개.',
-        '- days는 Day 수만큼, stops는 모든 계획 id를 빠짐없이 그대로 사용.',
+        '[1] 바탕 풍경 고르기 (kit, variant)',
+        '일정 전체의 장소, 활동, 음식, 계절감, 함께 가는 사람의 분위기를 읽고 가장 어울리는 하나를 골라.',
+        table,
+        prev ? '직전에 보여 준 분위기는 ' + prev.kit + ' ' + prev.variant + '번이야. 이번에는 다른 kit이나 다른 느낌으로 골라.' : '',
         '',
-        '형식 예시:',
-        '{"title":"18자 이내 제목","subtitle":"30자 이내 한 줄","emoji":"🌊","keywords":["바다","여유","산책"],"palette":{"bg1":"#EEF8FB","bg2":"#D6EEF5","card":"#FFFFFF","ink":"#0E3442","sub":"#4B7486","acc":"#3CC2D4","acc2":"#1C84AA"},"font":"rounded","pattern":"waves","days":[{"subtitle":"16자 이내"}],"stops":[{"id":"계획 id","emoji":"🍜","tag":"4자 이내 분류","note":"24자 이내 한 줄"}],"closing":"30자 이내 마무리 문장"}',
+        '[2] 색조 (tone)',
+        '이 여행만의 공기를 정해: warm(따뜻하게), cool(시원하게), soft(부드럽게), vivid(선명하게), muted(차분하게), neutral(그대로) 중 하나.',
         '',
-        '계획 이름: ' + p.title,
-        '계획:',
+        '[3] 소품 (motifs): 이 여행을 상징하는 소품을 0~3개 골라 풍경 속에 놓아.',
+        '고를 수 있는 이름: ' + MOTIF_NAMES.join(', '),
+        '- bridge 다리·대교, lighthouse 등대, sailboat 요트·배, ferris 관람차·놀이공원, tower 전망 타워, pagoda 탑, castle 성·궁전, torii 신사 문, train 기차 여행, tent 캠핑, cake 케이크·생일, balloons 풍선·파티, hearts 하트·데이트·기념일, plane 비행기·출국, cloud 구름',
+        '- 일정에 근거가 있을 때만 골라. 억지로 채우지 마. 각 소품에는 zone(left, center, right)을 줘. bridge와 train은 항상 가운데에 놓여.',
+        '',
+        '[4] 직접 그린 소품 (props): 위 목록에 없지만 이 여행에 꼭 필요한 상징이 있으면 직접 그려도 돼. 없으면 빈 배열.',
+        '- 최대 1개. 100x100 상자 안에 단순한 평면 실루엣으로 그려. 사용 가능한 태그: path, circle, ellipse, rect, line, polygon, polyline, g.',
+        '- 색은 반드시 이 이름만: sil(어두운 실루엣), lit(밝은 면), acc(포인트), sun(빛나는 색), none. 16진수 색이나 style, 텍스트는 금지. 전체 600자 이내.',
+        '- 형식: {"svg":"<path d=\\"M10 90 L50 10 L90 90 Z\\" fill=\\"sil\\"/>","zone":"center","size":"medium","slot":"far"}  (size: small|medium|large, slot: sky|far|near)',
+        '- 예: 불국사를 가면 석가탑, 경복궁이면 근정전 지붕처럼 그 장소를 알아볼 수 있게. 확신이 없으면 그리지 마.',
+        '',
+        '[5] 문장',
+        'subtitle (부제): 18~28자 한 문장. 일정에 실제로 적힌 장소, 음식, 활동을 하나 이상 녹이고, 일정에 없는 지명이나 가게 이름은 절대 만들지 마.',
+        'closing (마무리): 14~24자. 여행이 끝난 뒤를 담담하게 돌아보는 한 문장.',
+        '문체: 사진 한 장에 붙이는 짧은 캡션처럼 구체적이고 절제되게. 형용사를 쌓지 마. 마침표, 느낌표, 물음표, 이모지, 해시태그 금지.',
+        '쓰지 말 것: 설렘, 설레는, 추억, 가득, 한 줄, 소중한, 특별한, 힐링, 감성, 여정, 낭만, 행복, ~되길, "~하는 하루"로 끝나는 진부한 문장.',
+        '좋은 예: 광안리의 밤바다를 따라 걷는 시간 / 국물 한 그릇과 골목 구경으로 채운 오후 / 짠 바람이 아직 옷에 배어 있다',
+        '나쁜 예: 설레는 마음으로 떠나는 특별한 여정 / 추억 가득한 행복한 하루',
+        '',
+        '형식: {"kit":"sea","variant":1,"tone":"warm","motifs":[{"name":"bridge","zone":"center"}],"props":[],"subtitle":"...","closing":"..."}',
+        '',
+        '여행 제목: ' + p.title,
+        '일정:',
         lines.join('\n')
-      ].join('\n');
+      ].filter(function (x, i, a) { return !(x === '' && a[i - 1] === ''); }).join('\n');
       if (sample) return sample.json(prompt, { modelTier: 'default', cache: false });
       if (Sync.hasAI()) return Sync.aiJson(prompt);
       throw { code: 'unavailable' };
@@ -3060,14 +3814,15 @@
   function generateTheme(p, prev) {
     if (generating[p.id]) return;
     generating[p.id] = true;
-    aiTheme(p)
-      .then(function (raw) { return sanitizeTheme(raw, p); })
+    aiTheme(p, prev)
+      .then(function (raw) { return sanitizeTheme(raw, p, prev); })
       .catch(function (e) {
         if (Sync.hasAI()) {
           var why = e ? [e.code, String(e.message || e).replace(/https?:\/\/\S+/g, '').replace(/\[GoogleGenerativeAI Error\]:?/g, '').replace(/\s+/g, ' ').trim().slice(0, 120)].filter(Boolean).join(' · ') : '';
+          if (Sync.kind() === 'firebase') why += (why ? '\n' : '') + 'AppCheck: ' + Sync.acStatus();
           toast('AI에 연결하지 못해 기본 테마로 만들었어요' + (why ? '\n' + why : ''), false, 12000);
         }
-        return prev || localTheme(p);
+        return localTheme(p, prev);
       })
       .then(function (theme) {
         generating[p.id] = false;
@@ -3136,57 +3891,51 @@
       '<div class="dz-gen" role="status" aria-label="AI가 테마를 만드는 중"><div class="dz-orb"></div></div>' +
       '<div class="dz-skel big"></div><div class="dz-skel"></div><div class="dz-skel"></div>';
   }
+  function titleSize(s) { var n = String(s).length; return n <= 7 ? 54 : n <= 11 ? 46 : n <= 16 ? 38 : 32; }
   function renderThemed(host, p) {
-    var t = p.completed.theme, pl = t.palette;
-    ensureFont(t.font);
-    host.className = 'pane dz-host';
-    document.body.style.setProperty('--page-bg', pl.bg2);
+    var t = normalizeTheme(p.completed.theme, p);
+    if (t !== p.completed.theme) { p.completed.theme = t; writeStore(); }
+    var K = KITS[t.kit], v = kitVariant(t), F = FONTS[K.font];
+    ensureFont(K.font);
+    host.className = 'pane dz-host k-' + K.card;
+    host.setAttribute('data-kit', t.kit);
+    document.body.style.setProperty('--page-bg', v.bg2);
     document.body.classList.add('has-theme');
     var st = host.style;
-    st.setProperty('--t-bg1', pl.bg1);
-    st.setProperty('--t-bg2', pl.bg2);
-    st.setProperty('--t-card', pl.card);
-    st.setProperty('--t-ink', pl.ink);
-    st.setProperty('--t-sub', pl.sub);
-    st.setProperty('--t-acc', pl.acc);
-    st.setProperty('--t-acc2', pl.acc2);
-    st.setProperty('--t-page-ink', pl.pageInk);
-    st.setProperty('--t-page-sub', pl.pageSub);
-    st.setProperty('--t-day', pl.day);
-    st.setProperty('--t-hero-ink', pl.heroInk);
-    st.setProperty('--t-pat', patternURI(t.pattern, pl.heroInk));
-    st.setProperty('--t-font', "'" + FONTS[t.font][0] + "', var(--font)");
+    st.setProperty('--t-bg1', v.bg1);
+    st.setProperty('--t-bg2', v.bg2);
+    st.setProperty('--t-card', v.card);
+    st.setProperty('--t-ink', v.cink);
+    st.setProperty('--t-sub', v.csub);
+    st.setProperty('--t-acc', v.acc);
+    st.setProperty('--t-acc2', v.acc);
+    st.setProperty('--t-day', v.acc);
+    st.setProperty('--t-line', v.line);
+    st.setProperty('--t-page-ink', v.ink);
+    st.setProperty('--t-page-sub', v.sub);
+    st.setProperty('--t-hero-ink', v.hink);
+    st.setProperty('--t-font', "'" + F[0] + "', var(--font)");
+    st.setProperty('--t-tw', String(F[2]));
 
-    var total = 0;
-    p.days.forEach(function (d) { total += d.blocks.length; });
-    var cnt = store.plans.filter(function (x) { return x.completed; }).length;
-    var h = '';
-    h += '<header class="dz-hero"><div class="dz-tools">' +
+    var h = '<header class="dz-hero">' + kitScene(t) +
+      '<div class="dz-tools">' +
       (Sync.available() ? '<button class="dz-tool dz-share" type="button" aria-label="공유">' + IC.link + '</button>' : '') +
-      '<button class="dz-tool dz-regen" type="button" aria-label="AI 테마 다시 만들기">' + IC.sparkle + '</button></div>' +
-      '<div class="dz-emoji">' + esc(t.emoji) + '</div>' +
-      '<h1 class="dz-title">' + esc(t.title) + '</h1><p class="dz-sub">' + esc(t.subtitle) + '</p>';
-    if (t.keywords.length) h += '<div class="dz-keys">' + t.keywords.map(function (k) { return '<span>#' + esc(k) + '</span>'; }).join('') + '</div>';
-    h += '<div class="dz-meta">' + esc(p.title) + ', Day ' + p.days.length + ', 계획 ' + total + '개</div></header>';
+      '<button class="dz-tool dz-regen" type="button" aria-label="분위기 다시 고르기">' + IC.sparkle + '</button></div>' +
+      '<div class="dz-htxt"><h1 class="dz-title" style="font-size:' + titleSize(p.title) + 'px">' + esc(p.title) + '</h1>' +
+      '<p class="dz-sub">' + esc(t.subtitle) + '</p></div></header>';
     var i = 0;
     p.days.forEach(function (d, di) {
       if (!d.blocks.length) return;
-      h += '<section class="dz-day"><div class="dz-daybar"><span class="dz-dnum">' + (di < 9 ? '0' : '') + (di + 1) + '</span>' +
-        '<span class="dz-dsub">' + esc(t.days[di] || '') + '</span></div><div class="dz-list">';
+      h += '<section class="dz-day"><div class="dz-daybar"><span class="dz-dnum">' + (di < 9 ? '0' : '') + (di + 1) + '</span><i class="dz-rule"></i></div><div class="dz-list">';
       d.blocks.forEach(function (b) {
-        var s = t.stops[b.id] || { emoji: '📍', tag: '일정', note: '' };
         h += '<article class="dz-stop" style="--i:' + (i++) + '"><span class="dz-dot"></span>' +
           '<div class="dz-time">' + fmt(b.start) + '<small>' + fmt(b.start + b.dur) + '</small></div>' +
-          '<div class="dz-card"><div class="dz-head"><span class="dz-em">' + esc(s.emoji) + '</span><span class="dz-tag">' + esc(s.tag) + '</span>' +
-          '<span class="dz-range">' + esc(fmtDur(b.dur)) + '</span></div>' +
-          '<h3>' + esc(b.text || '제목 없는 계획') + '</h3>' +
-          (s.note ? '<p class="dz-note">' + esc(s.note) + '</p>' : '') +
+          '<div class="dz-card"><h3>' + esc(b.text || '제목 없는 계획') + '</h3>' +
           '<div class="dz-photo" data-k="' + esc(p.id + ':' + b.id) + '"></div></div></article>';
       });
       h += '</div></section>';
     });
     h += '<p class="dz-end" style="--i:' + i + '">' + esc(t.closing) + '</p>';
-    h += '<p class="dz-src">' + (t.src === 'ai' ? 'AI가 계획을 읽고 만든 테마예요' : 'AI를 쓸 수 없어 기본 테마로 만들었어요') + '. ' + esc(fmtDate(p.completed.at)) + ' 완성</p>';
     host.innerHTML = h;
     host.scrollTop = 0;
     host.style.setProperty('--hs', 0);
@@ -3251,11 +4000,14 @@
 
   /* complete: warn first, then lock the plan and let AI theme it */
   var csheet = document.getElementById('csheet');
+  var ctitleInput = document.getElementById('c-title');
+  ctitleInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') document.getElementById('cok').click(); });
   function askComplete() {
     var n = 0;
     state.days.forEach(function (d) { n += d.blocks.length; });
     if (!n) { toast('먼저 계획을 하나 이상 추가해 주세요'); return; }
     if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+    ctitleInput.value = state.title || '';
     csheet.classList.add('open');
   }
   function closeConfirm() { csheet.classList.remove('open'); }
@@ -3266,6 +4018,8 @@
     flushCommit();
     var p = state;
     if (p.completed || isLocked()) return;
+    var chosen = (ctitleInput.value || '').replace(/\s+/g, ' ').trim().slice(0, 24);
+    if (chosen) p.title = chosen;
     p.completed = { at: Date.now(), by: Sync.myId(), theme: null };
     p.updated = Date.now();
     writeStore();
@@ -3451,13 +4205,18 @@
       }).catch(function () { fbOn = false; return false; });
     }
     /* App Check: proves requests come from our site (required by Firebase AI Logic) */
+    var acStatus = 'off';
     function setupAppCheck(app) {
       var ac = cfg.appCheck;
-      if (!(ac && ac.siteKey)) return Promise.resolve();
+      if (!(ac && ac.siteKey)) { acStatus = 'no-key'; return Promise.resolve(); }
       return import('https://www.gstatic.com/firebasejs/' + (cfg.sdk || '11.10.0') + '/firebase-app-check.js').then(function (M) {
         var P = ac.provider === 'v3' ? M.ReCaptchaV3Provider : M.ReCaptchaEnterpriseProvider;
-        M.initializeAppCheck(app, { provider: new P(ac.siteKey), isTokenAutoRefreshEnabled: true });
-      }).catch(function () {});
+        var inst = M.initializeAppCheck(app, { provider: new P(ac.siteKey), isTokenAutoRefreshEnabled: true });
+        acStatus = 'starting';
+        if (M.getToken) {
+          M.getToken(inst, false).then(function () { acStatus = 'ok'; }, function (e) { acStatus = 'token-error:' + ((e && (e.code || e.message)) || '?'); });
+        }
+      }).catch(function (e) { acStatus = 'load-error:' + ((e && (e.code || e.message)) || '?'); });
     }
     function signIn() {
       if (!fb) return Promise.reject({ code: 'unavailable' });
@@ -3668,6 +4427,8 @@
       if (!m) return;
       if (document.body.classList.contains('dragging')) { s.pending = true; return; }
       s.pending = false;
+      /* a keystroke typed a moment ago is still waiting for its debounced save: save it first so the remote copy cannot replace it */
+      if (plan === state) flushCommit();
       var n = Math.max(1, Math.min(60, m.days | 0 || 1));
       var days = [];
       for (var i = 0; i < n; i++) days.push({ blocks: [] });
@@ -3849,7 +4610,7 @@
       needsAuth: function () { return kind === 'firebase' && !me.id; },
       signIn: signIn, signOut: signOutUser,
       user: function () { return { id: me.id, photo: me.photo, color: me.color }; },
-      hasAI: hasAI, aiJson: aiJson,
+      hasAI: hasAI, aiJson: aiJson, acStatus: function () { return acStatus; },
       readOnly: function () { return canWrite === false; },
       myId: function () { return me.id || 'local'; },
       peers: function () { return peerList; },
