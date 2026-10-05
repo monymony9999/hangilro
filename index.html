@@ -692,7 +692,7 @@
     align-items: center;
     gap: 14px;
     padding: 11px 18px;
-    border-radius: 999px;
+    border-radius: 22px;
     background: color-mix(in srgb, var(--ink) 92%, transparent);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
@@ -703,8 +703,13 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity .45s var(--ease), transform .45s var(--ease);
-    white-space: nowrap;
+    white-space: normal;
+    width: max-content;
+    max-width: min(90vw, 440px);
+    text-align: center;
+    line-height: 1.45;
   }
+  #toastmsg { min-width: 0; white-space: pre-line; overflow-wrap: anywhere; word-break: break-word; }
   #toast.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
   #toast button { font-weight: 600; color: var(--accent-1); }
 
@@ -1950,13 +1955,13 @@
   var toastBtn = document.getElementById('toastbtn');
   var toastTimer = 0;
   var toastAt = -1;
-  function toast(msg, withUndo) {
+  function toast(msg, withUndo, ms) {
     toastMsg.textContent = msg;
     toastBtn.hidden = !withUndo;
     if (withUndo) toastAt = hist.i;
     toastEl.classList.add('show');
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 4200);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, ms || 4200);
   }
   toastBtn.addEventListener('click', function () {
     if (hist.i === toastAt) go(-1);
@@ -3058,7 +3063,10 @@
     aiTheme(p)
       .then(function (raw) { return sanitizeTheme(raw, p); })
       .catch(function (e) {
-        if (Sync.hasAI()) toast('AI에 연결하지 못해 기본 테마로 만들었어요' + (e && e.code ? ' (' + e.code + ')' : ''));
+        if (Sync.hasAI()) {
+          var why = e ? [e.code, String(e.message || e).replace(/https?:\/\/\S+/g, '').replace(/\[GoogleGenerativeAI Error\]:?/g, '').replace(/\s+/g, ' ').trim().slice(0, 120)].filter(Boolean).join(' · ') : '';
+          toast('AI에 연결하지 못해 기본 테마로 만들었어요' + (why ? '\n' + why : ''), false, 12000);
+        }
         return prev || localTheme(p);
       })
       .then(function (theme) {
@@ -3513,7 +3521,8 @@
         return aiMod;
       }).then(function (M) {
         var ai = M.getAI(fb.app, { backend: new M.GoogleAIBackend() });
-        var models = (cfg.models && cfg.models.length) ? cfg.models : ['gemini-2.5-flash', 'gemini-2.5-flash-lite'];
+        var models = ((cfg.models && cfg.models.length) ? cfg.models : ['gemini-2.5-flash', 'gemini-2.5-flash-lite']).concat(['gemini-3-flash-preview'])
+          .filter(function (m, i, a) { return a.indexOf(m) === i; });
         var i = 0;
         function next(err) {
           var name = models[i++];
