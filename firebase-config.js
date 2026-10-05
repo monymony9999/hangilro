@@ -10,9 +10,14 @@ window.HANGILRO_CONFIG = {
     appId: "1:809616005057:web:6d172de427037cffda0140",
     measurementId: "G-1V13DGHG5Q"
   },
+  // App Check: Firebase AI Logic 이 요구합니다. reCAPTCHA Enterprise 사이트 키를 siteKey 에 넣으세요.
+  appCheck: { provider: "enterprise", siteKey: "" },
+  // (선택) Google AI Studio에서 만든 Gemini 키. 웹사이트 제한을 건 키만 넣으세요.
+  // 비워 두면 Firebase AI Logic 을 사용합니다.
+  geminiKey: "",
   // Firebase 웹 SDK 버전 (문제가 생기면 이 숫자만 최신으로 바꿔 보세요)
   sdk: "11.10.0",
   // AI 테마에 쓰는 Gemini 모델. 앞에서부터 시도하고 안 되면 다음으로 넘어갑니다.
   // 이름이 바뀌면 Firebase 콘솔 > AI Logic 에서 현재 모델 이름을 확인해 고쳐 주세요.
-  models: ["gemini-2.5-flash", "gemini-2.5-flash-lite"]
+  models: ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 };

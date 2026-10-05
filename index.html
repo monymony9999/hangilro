@@ -3440,15 +3440,24 @@
         db = wrapFirestore(F, fs);
         kind = 'firebase';
         needsMembership = true;
-        return new Promise(function (res) {
+        return setupAppCheck(app).then(function () { return new Promise(function (res) {
           var first = true;
           Au.onAuthStateChanged(auth, function (u) {
             setUser(u);
             if (first) { first = false; res(true); } else { authChanged(); }
           });
           setTimeout(function () { if (first) { first = false; res(true); } }, 8000);
-        });
+        }); });
       }).catch(function () { fbOn = false; return false; });
+    }
+    /* App Check: proves requests come from our site (required by Firebase AI Logic) */
+    function setupAppCheck(app) {
+      var ac = cfg.appCheck;
+      if (!(ac && ac.siteKey)) return Promise.resolve();
+      return import('https://www.gstatic.com/firebasejs/' + (cfg.sdk || '11.10.0') + '/firebase-app-check.js').then(function (M) {
+        var P = ac.provider === 'v3' ? M.ReCaptchaV3Provider : M.ReCaptchaEnterpriseProvider;
+        M.initializeAppCheck(app, { provider: new P(ac.siteKey), isTokenAutoRefreshEnabled: true });
+      }).catch(function () {});
     }
     function signIn() {
       if (!fb) return Promise.reject({ code: 'unavailable' });
@@ -3513,15 +3522,56 @@
     }
 
     /* AI theme: Gemini through Firebase AI Logic (no server of our own) */
-    function hasAI() { return fbOn && !!fb; }
+    function hasAI() { return !!cfg.geminiKey || (fbOn && !!fb); }
+
+    /* Direct Gemini call with a website-restricted key (used when set in firebase-config.js) */
+    function directGemini(prompt) {
+      var models = ((cfg.models && cfg.models.length) ? cfg.models : ['gemini-3.8-flash', 'gemini-3.5-flash-lite']).concat(['gemini-3.8-flash', 'gemini-3.5-flash-lite'])
+        .filter(function (m, i, a) { return a.indexOf(m) === i; });
+      var i = 0;
+      function next(err) {
+        var name = models[i++];
+        if (!name) return Promise.reject(err || { code: 'gemini/failed' });
+        return fetch('https://generativelanguage.googleapis.com/v1beta/models/' + name + ':generateContent', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-goog-api-key': cfg.geminiKey },
+          body: JSON.stringify({
+            contents: [{ role: 'user', parts: [{ text: prompt }] }],
+            generationConfig: { responseMimeType: 'application/json' }
+          })
+        }).then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (d) {
+            if (!r.ok) {
+              var e = { code: 'gemini/' + r.status, message: (d && d.error && d.error.message) || ('HTTP ' + r.status) };
+              throw e;
+            }
+            var parts = d && d.candidates && d.candidates[0] && d.candidates[0].content && d.candidates[0].content.parts;
+            var t = parts && parts[0] && parts[0].text;
+            if (!t) throw { code: 'gemini/empty', message: 'empty response' };
+            return JSON.parse(String(t).replace(/^\s*```(?:json)?/i, '').replace(/```\s*$/, '').trim());
+          });
+        }).catch(next);
+      }
+      return next();
+    }
+
     function aiJson(prompt) {
+      if (cfg.geminiKey) {
+        return directGemini(prompt).catch(function (e) {
+          if (fb) return firebaseAi(prompt).catch(function () { throw e; });
+          throw e;
+        });
+      }
+      return firebaseAi(prompt);
+    }
+    function firebaseAi(prompt) {
       return Promise.resolve().then(function () {
         if (!fb) throw { code: 'unavailable' };
         if (!aiMod) aiMod = import(fb.base + 'firebase-ai.js');
         return aiMod;
       }).then(function (M) {
         var ai = M.getAI(fb.app, { backend: new M.GoogleAIBackend() });
-        var models = ((cfg.models && cfg.models.length) ? cfg.models : ['gemini-2.5-flash', 'gemini-2.5-flash-lite']).concat(['gemini-3-flash-preview'])
+        var models = ((cfg.models && cfg.models.length) ? cfg.models : ['gemini-3.8-flash', 'gemini-3.5-flash-lite']).concat(['gemini-3.8-flash', 'gemini-3.5-flash-lite'])
           .filter(function (m, i, a) { return a.indexOf(m) === i; });
         var i = 0;
         function next(err) {
