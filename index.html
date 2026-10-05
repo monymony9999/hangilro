@@ -1987,7 +1987,10 @@
     });
     ta.addEventListener('blur', flushCommit);
     ta.addEventListener('focus', function () { Sync.focus(id); });
-    ta.addEventListener('blur', function () { Sync.focus(null); });
+    ta.addEventListener('blur', function () {
+      Sync.focus(null);
+      if (state.shared) setTimeout(function () { if (!document.activeElement || document.activeElement !== ta) applyDay(di); }, 60);
+    });
     ta.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ta.blur(); }
     });
@@ -3041,7 +3044,10 @@
     generating[p.id] = true;
     aiTheme(p)
       .then(function (raw) { return sanitizeTheme(raw, p); })
-      .catch(function () { return prev || localTheme(p); })
+      .catch(function (e) {
+        if (Sync.hasAI()) toast('AI에 연결하지 못해 기본 테마로 만들었어요' + (e && e.code ? ' (' + e.code + ')' : ''));
+        return prev || localTheme(p);
+      })
       .then(function (theme) {
         generating[p.id] = false;
         if (!p.completed) return;
@@ -3341,7 +3347,12 @@
       return plan._sync;
     }
     function dirtyInc(s, id) { s.dirty[id] = (s.dirty[id] || 0) + 1; }
-    function dirtyDec(s, id) { if (--s.dirty[id] <= 0) delete s.dirty[id]; }
+    function dirtyDec(s, id) {
+      if (--s.dirty[id] <= 0) {
+        delete s.dirty[id];
+        if (cur && cur.plan._sync === s && !Object.keys(s.dirty).length) setTimeout(function () { if (cur && cur.plan._sync === s) maybeApply(cur.plan); }, 0);
+      }
+    }
 
     function initArtifact() {
       if (!(window.claude && typeof window.claude.use === 'function')) return Promise.resolve(false);
@@ -3850,7 +3861,7 @@
   function closeShare() { ssheet.classList.remove('open'); }
   function withAuth(fn) {
     if (!Sync.needsAuth()) { fn(); return; }
-    Sync.signIn().then(function () { fn(); }).catch(function () { toast('로그인하지 못했어요'); });
+    Sync.signIn().then(function () { fn(); }).catch(function (e) { toast('로그인하지 못했어요' + (e && e.code ? ' (' + e.code + ')' : '')); });
   }
   function authChanged() {
     renderAccount();
@@ -3880,9 +3891,9 @@
     Sync.share(p).then(function (code) {
       if (state === p) showCode(code);
       refreshLock();
-    }).catch(function () {
+    }).catch(function (e) {
       closeShare();
-      toast('공유를 시작하지 못했어요');
+      toast('공유를 시작하지 못했어요' + (e && e.code ? ' (' + e.code + ')' : ''));
     });
   }
   document.getElementById('sbg').addEventListener('click', closeShare);
@@ -3939,7 +3950,7 @@
     }).catch(function (e) {
       updateJoinBtn();
       var c = e && e.code;
-      toast(c === 'notfound' ? '찾을 수 없는 코드예요' : c === 'unavailable' ? '지금은 연결할 수 없어요' : '참여하지 못했어요');
+      toast(c === 'notfound' ? '찾을 수 없는 코드예요' : c === 'unavailable' ? '지금은 연결할 수 없어요' : '참여하지 못했어요' + (c ? ' (' + c + ')' : ''));
     });
   }
   document.getElementById('join-plan').addEventListener('click', function () { openJoin(''); });
@@ -3959,7 +3970,7 @@
   document.getElementById('g-out').innerHTML = IC.logout;
 
   document.getElementById('g-in').addEventListener('click', function () {
-    Sync.signIn().catch(function () { toast('로그인하지 못했어요'); });
+    Sync.signIn().catch(function (e) { toast('로그인하지 못했어요' + (e && e.code ? ' (' + e.code + ')' : '')); });
   });
   document.getElementById('g-out').addEventListener('click', function () {
     Sync.signOut().then(function () { authChanged(); }).catch(function () {});
