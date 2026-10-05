@@ -11,7 +11,7 @@ window.HANGILRO_CONFIG = {
     measurementId: "G-1V13DGHG5Q"
   },
   // App Check: Firebase AI Logic 이 요구합니다. reCAPTCHA Enterprise 사이트 키를 siteKey 에 넣으세요.
-  appCheck: { provider: "enterprise", siteKey: "" },
+  appCheck: { provider: "enterprise", siteKey: "6Lfu_d8tAAAAAEW_J2kSXrLChxqcEJ8geYlbvvU_" },
   // (선택) Google AI Studio에서 만든 Gemini 키. 웹사이트 제한을 건 키만 넣으세요.
   // 비워 두면 Firebase AI Logic 을 사용합니다.
   geminiKey: "",
